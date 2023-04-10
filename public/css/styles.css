@@ -93,6 +93,11 @@
   --btnBoxShadow: 0px 8px 18px 0px rgba(var(--blackRGB), 12%);
   --cardBoxShadow: 0px 15px 25px 0px rgba(var(--blackRGB), 6%);
   --paperBoxShadow: 0px 15px 35px 0px rgba(var(--blackRGB), 10%);
+  --cusTextColor: #172026;
+  --cusBgColor: #f29b30;
+  --cusSecoundaryColor: #ee3432;
+  --cusWhite: #fff;
+  
 }
 
 * {
@@ -140,7 +145,21 @@ h6 {
   padding: 0px;
   color: var(--headingColor);
 }
+h5{
+  font-weight: bolder !important;
+  color:var(--headingColor) !important;
 
+}
+.f-13{
+  font-size: 13px;
+}
+.f-15{
+  font-size: 15px;
+}
+.f-bold{
+  font-weight: bold;
+
+}
 p {
   margin: 0px;
 }
@@ -186,12 +205,17 @@ button::placeholder,
 textarea::placeholder {
   color: var(--placeholderColor);
 }
-
+.w100{
+  width: 100%;
+  height: 42px;
+  border-radius: 2px;
+}
 button {
   cursor: pointer;
   line-height: 0px;
   color: var(--textColor);
 }
+
 
 body::-webkit-scrollbar-track {
   background: red;
@@ -1094,7 +1118,7 @@ textarea.form-control {
 .mc-label-field-select,
 .mc-label-field-textarea {
   padding: 0px 15px;
-  border-radius: 8px;
+  border-radius: 2px;
   font-size: 14px;
   font-weight: 500;
   border: 1px solid var(--deepBorder);
@@ -6438,4 +6462,54 @@ background-color: var(--thinBorder);
 }
 .child-four-box{
   height: 290px !important;
+}
+.dark{
+  color: var(--cusWhite) ;
+  background-color: var(--cusTextColor) ;
+}
+.search-btn-box{
+  text-align: end;
+}
+/* .search-btn-box .a{
+  color: var(--cusWhite) ;
+  background-color: var(--cusTextColor) ;
+} */
+.product-card-dis{
+  display: flex;
+  flex-wrap: wrap;
+}
+.product-card {
+  width: 33%;
+  margin: 7px;
+}
+.product-card .card{
+border-radius: 4px;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.product-card .card-title{
+  font-size: 13px;
+  margin-top: 5px;
+}
+.product-card button{
+  padding: 7px 10px;
+  border-radius: 2px;
+  font-size: 13px;
+  text-transform: capitalize;
+}
+.product-card-details-wrapper{
+  padding: 0px 5px;
+  font-size: 13px;
+}
+.product-card-details-wrapper .product-card-details{
+  display: flex;
+  justify-content: space-between;
+}
+.product-card-details-wrapper .product-card-details span{
+  font-size: 15px;
+  font-weight: bold;
+}
+.product-checkout-sidebar{
+  position: sticky;
+  left: 0;
+  z-index: 1;
 }
