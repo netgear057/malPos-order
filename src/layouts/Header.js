@@ -33,7 +33,7 @@ export default function Header() {
       <Logo
         src={data?.logo.src}
         alt={data?.logo.alt}
-        name={data?.logo.name}
+        // name={data?.logo.name}
         href={data?.logo.path}
       />
       <Box className="mc-header-group">
