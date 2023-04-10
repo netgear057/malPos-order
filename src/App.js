@@ -73,7 +73,7 @@ export default function App() {
 
             {/* Supports Pages */}
             <Route path="*" element={<Error />} />
-            <Route path="/" element={<Ecommerce />} />
+            <Route path="/" element={<BlankPage />} />
             <Route path="/documentation" element={<Documentation />} />
             <Route path="/changelog" element={<ChangeLog />} />
           </Routes>
