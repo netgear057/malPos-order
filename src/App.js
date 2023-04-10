@@ -33,6 +33,7 @@ import {
   BlankPage,
   Settings,
 } from "./pages/master";
+import OrdersLine from "./pages/master/OrdersLine";
 
 export default function App() {
   return (
@@ -41,6 +42,9 @@ export default function App() {
         <BrowserRouter>
           <Routes>
             {/* master Pages */}
+            {/* Sk Maplos-line Orders */}
+            <Route path="/orders-line" element={<OrdersLine />} />
+
             <Route path="/ecommerce" element={<Ecommerce />} />
             <Route path="/analytics" element={<Analytics />} />
             <Route path="/crm" element={<CRM />} />
