@@ -150,11 +150,18 @@ h5{
   color:var(--headingColor) !important;
 
 }
+
+.pl-7{
+  padding: 10px 7px !important;
+}
 .f-13{
   font-size: 13px;
 }
 .f-15{
   font-size: 15px;
+}
+.cus-mt-5{
+  margin-top: 5px !important;
 }
 .f-bold{
   font-weight: bold;
@@ -209,6 +216,12 @@ textarea::placeholder {
   width: 100%;
   height: 42px;
   border-radius: 2px;
+}
+.bold{
+  font-weight: bold;
+}
+.mt-20{
+  margin-top: 20px;
 }
 button {
   cursor: pointer;
@@ -292,10 +305,34 @@ p {
   padding: 15px 20px;
   border-radius: 8px;
 }
+.green{
+  color: #1a9f53;
+}
+.red{
+  color: red;
+}
+.cus-btn{
+  font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    padding: 20px 22px;
+    border-radius: 4px;
+    color: #fff;
+    background-color:#f29b30;
+    margin-top: 5px !important;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
 
+}
+.cus-btn:hover{
+  background-color: #172026;
+}
 .btn-close {
   padding: 0px;
   background-size: 12px;
+}
+.text-end{
+  float: right;
 }
 
 .alert-dismissible .btn-close {
@@ -448,7 +485,8 @@ p {
 }
 
 .mc-logo img {
-  height: 45px;
+  height: 137px !important;
+  width: 150px;
 }
 
 .mc-logo-group {
@@ -3226,7 +3264,7 @@ textarea.form-control {
           justify-content: start;
   gap: 0px;
   position: fixed;
-  top: 0px;
+  top: -42px;
   left: 0px;
   z-index: 5;
 }
@@ -6414,7 +6452,7 @@ background-color: var(--thinBorder);
   background-color: #00acee;
   color: #fff;
   width: 55%;
-  height: 130px;
+  height: 80px;
   border: 2px dashed var(--hardBorder);
   border-radius: 7px;
 
@@ -6426,7 +6464,7 @@ background-color: var(--thinBorder);
   justify-content: center;
   align-items: center;
   margin-top: 30px;
-  height: 200px;
+  height: 170px;
   width: 80%;
   background-color: #00acee;
   border: 2px dashed var(--hardBorder);
@@ -6449,7 +6487,7 @@ background-color: var(--thinBorder);
   background-color: #00acee;
   color: #fff;
   width: 55%;
-  height: 150px;
+  height: 110px;
   border: 2px dashed var(--hardBorder);
   border-radius: 50%;
 }
@@ -6461,7 +6499,7 @@ background-color: var(--thinBorder);
   flex-direction: column;
 }
 .child-four-box{
-  height: 290px !important;
+  height: 190px !important;
 }
 .dark{
   color: var(--cusWhite) ;
@@ -6479,7 +6517,7 @@ background-color: var(--thinBorder);
   flex-wrap: wrap;
 }
 .product-card {
-  width: 33%;
+  width: 100%;
   margin: 7px;
 }
 .product-card .card{
@@ -6509,7 +6547,113 @@ box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px
   font-weight: bold;
 }
 .product-checkout-sidebar{
-  position: sticky;
-  left: 0;
-  z-index: 1;
+  width: 100%;
+}
+
+.products-view-box{
+  display: flex;
+}
+.products-view-box .producsts-view-aside{
+  flex: 1;
+  order: 1;
+}
+.products-view-box .producsts-view-main{
+  flex: 3;
+  order: 2;
+}
+.search-category-model .modal-content {
+  width: 400px ;
+}
+.search-product-model .modal-content {
+  width: 700px ;
+}
+.search-product-model .modal-header {
+  padding: 10px;
+  margin-bottom: 5px;
+
+}
+.search-product-model .modal-header .modal-title 
+{
+  font-size: 18px;
+
+}
+.search-product-model .modal-footer{
+  padding: 10px;
+  margin-top: 5px;
+  justify-content:end;
+}
+.search-product-model img{
+  width: 100%;
+  height: 200px;
+  border-radius: 4px;
+}
+/*categorry model  */
+.search-category-model .modal-content {
+  width: 350px ;
+}
+
+.search-category-model .modal-header {
+  padding: 10px;
+  margin-bottom: 5px;
+
+}
+.search-category-model .modal-header .modal-title 
+{
+  font-size: 18px;
+
+}
+.search-category-model .modal-footer{
+  padding: 10px;
+  margin-top: 5px;
+}
+.select-options{
+  padding: 8px 0px;
+  width: 100%;
+  margin: 0px auto;
+  border-radius: 4px;
+  border: 1px solid #f29b30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--bs-modal-color);
+  font-weight: bold;
+
+}
+.payment-checkout-model .modal-content {
+  width: 850px ;
+}
+.payment-checkout-model .modal-header {
+  padding: 10px;
+  margin-bottom: 5px;
+
+}
+.payment-checkout-model .modal-header .modal-title 
+{
+  font-size: 18px;
+
+}
+.payment-checkout-model .modal-footer{
+  padding: 10px;
+  margin-top: 5px;
+  justify-content: end;
+}
+/* invoice model */
+.product-invoice-model .modal-content {
+  width: 500px ;
+}
+.product-invoice-model .modal-header {
+  padding: 10px;
+  margin-bottom: 5px;
+
+}
+.product-invoice-model .modal-header .modal-title 
+{
+  font-size: 18px;
+
+}
+.product-invoice-model .modal-footer{
+  padding: 10px;
+  margin-top: 5px;
+  justify-content: end;
 }

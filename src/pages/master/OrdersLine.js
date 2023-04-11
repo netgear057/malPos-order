@@ -9,8 +9,14 @@ export default function OrdersLine() {
     <div>
       <PageLayout>
         <Row>
-          <Col md={12}>
-            <CardLayout>
+            <Col md={12}>
+                <CardLayout>
+                <Row>
+                    <Col md={1}>
+                   
+
+                    </Col>
+                <Col md={10}>
               <h3>Order Place</h3>
               <Box className={"order-line-tables-wrapper"}>
                 <Box className={"order-line-tables"}>
@@ -84,8 +90,11 @@ export default function OrdersLine() {
                   </Row>
                 </Box>
               </Box>
-            </CardLayout>
           </Col>
+                </Row>
+                </CardLayout>
+            </Col>
+         
         </Row>
       </PageLayout>
     </div>
