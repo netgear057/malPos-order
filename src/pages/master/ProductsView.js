@@ -21,6 +21,7 @@ export default function ProductsView() {
                     <Col md={12}>
                         <Row>
                             <Col md={3} className={'product-checkout-sidebar'}>
+                                <Box className={'my-products-aside-col'}>
                                 <Row>
                                     <Col md={12}>
                                         <CardLayout>
@@ -62,6 +63,7 @@ export default function ProductsView() {
                                         </CardLayout>
                                     </Col>
                                 </Row>
+                                </Box>
                             </Col>
                             <Col md={9}>
                                 <CardLayout>

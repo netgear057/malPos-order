@@ -210,6 +210,12 @@ textarea::placeholder {
   height: 42px;
   border-radius: 2px;
 }
+.bold{
+  font-weight: bold;
+}
+.mt-20{
+  margin-top: 20px;
+}
 button {
   cursor: pointer;
   line-height: 0px;
@@ -448,7 +454,8 @@ p {
 }
 
 .mc-logo img {
-  height: 45px;
+  height: 137px !important;
+  width: 150px;
 }
 
 .mc-logo-group {
@@ -3226,7 +3233,7 @@ textarea.form-control {
           justify-content: start;
   gap: 0px;
   position: fixed;
-  top: 0px;
+  top: -42px;
   left: 0px;
   z-index: 5;
 }
@@ -6414,7 +6421,7 @@ background-color: var(--thinBorder);
   background-color: #00acee;
   color: #fff;
   width: 55%;
-  height: 130px;
+  height: 80px;
   border: 2px dashed var(--hardBorder);
   border-radius: 7px;
 
@@ -6426,7 +6433,7 @@ background-color: var(--thinBorder);
   justify-content: center;
   align-items: center;
   margin-top: 30px;
-  height: 200px;
+  height: 170px;
   width: 80%;
   background-color: #00acee;
   border: 2px dashed var(--hardBorder);
@@ -6449,7 +6456,7 @@ background-color: var(--thinBorder);
   background-color: #00acee;
   color: #fff;
   width: 55%;
-  height: 150px;
+  height: 110px;
   border: 2px dashed var(--hardBorder);
   border-radius: 50%;
 }
@@ -6461,7 +6468,7 @@ background-color: var(--thinBorder);
   flex-direction: column;
 }
 .child-four-box{
-  height: 290px !important;
+  height: 190px !important;
 }
 .dark{
   color: var(--cusWhite) ;
@@ -6509,7 +6516,10 @@ box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px
   font-weight: bold;
 }
 .product-checkout-sidebar{
-  position: sticky;
-  left: 0;
+  width: 100%;
+}
+.my-products-aside-col{
+  position: fixed;
+  width: 320px;
   z-index: 1;
 }
