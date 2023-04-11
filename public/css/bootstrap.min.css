@@ -3255,7 +3255,7 @@ textarea.form-control.is-invalid {
     border: none;
     /* border: var(--bs-btn-border-width) solid var(--bs-btn-border-color); */
     border-radius: 2px !important;
-    background-color: #172026;
+    background-color: #ee4332;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
 }
 
@@ -3274,10 +3274,10 @@ textarea.form-control.is-invalid {
 .btn-check:focus+.btn,
 .btn:focus {
     color: var(--bs-btn-hover-color);
-    background-color: var(--bs-btn-hover-bg);
-    border-color: var(--bs-btn-hover-border-color);
+    background-color: #172026;
+    /* border-color: var(--bs-btn-hover-border-color); */
     outline: 0;
-    box-shadow: var(--bs-btn-focus-box-shadow)
+    /* box-shadow: var(--bs-btn-focus-box-shadow) */
 }
 
 .btn-check:active+.btn,
@@ -3286,8 +3286,8 @@ textarea.form-control.is-invalid {
 .btn.show,
 .btn:active {
     color: var(--bs-btn-active-color);
-    background-color: var(--bs-btn-active-bg);
-    border-color: var(--bs-btn-active-border-color)
+    background-color: #172026;
+    /* border-color: var(--bs-btn-active-border-color) */
 }
 
 .btn-check:active+.btn:focus,

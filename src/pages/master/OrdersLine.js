@@ -12,18 +12,11 @@ export default function OrdersLine() {
             <Col md={12}>
                 <CardLayout>
                 <Row>
-                    <Col md={3}>
-                    <h3>Tooltip</h3>
-                    <Box className={'mt-20'}>
-                        <CardLayout>
-                        <Text className={'bold'} as={'span'}>
-                            Select the table you want to add or edit for Products
-                        </Text>
-                        </CardLayout>
-                        </Box>
+                    <Col md={1}>
+                   
 
                     </Col>
-                <Col md={9}>
+                <Col md={10}>
               <h3>Order Place</h3>
               <Box className={"order-line-tables-wrapper"}>
                 <Box className={"order-line-tables"}>
