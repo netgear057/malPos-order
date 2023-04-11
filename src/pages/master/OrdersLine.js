@@ -1,5 +1,6 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { CardLayout } from "../../components/cards";
 import { Box, Text } from "../../components/elements";
 import PageLayout from "../../layouts/PageLayout";
@@ -28,63 +29,66 @@ export default function OrdersLine() {
                           <br />
                           <Text as="span">4</Text>
                         </Box>
-                        <Box className={"child-one-box"}>
+                        <Link to={'/my-products'} className={"child-one-box"}>
                           <h6>Table 1</h6>
                           <br />
                           <Text as="span">4</Text>
-                        </Box>
-                        <Box className={"child-one-box"}>
+                        </Link>
+                        <Link to={'/my-products'} className={"child-one-box"}>
                           <h6>Table 1</h6>
                           <br />
                           <Text as="span">4</Text>
-                        </Box>
-                        <Box className={"child-one-box"}>
+                        </Link>
+                        <Link to={'/my-products'} className={"child-one-box"}>
                           <h6>Table 1</h6>
                           <br />
                           <Text as="span">4</Text>
-                        </Box>
+                        </Link>
                       </Box>
                     </Col>
                     <Col md={3}>
-                      <Box className={"child-two-box-container"}>
+                      
+                      <Link to={'/my-products'} className={"child-two-box-container"}>
+                        
                         <Box className={"child-two-box"}>
                           <h6>Table 1</h6>
                           <br />
                           <Text as="span">4</Text>
                         </Box>
-                      </Box>
+                      </Link>
+                      
                     </Col>
                     <Col md={3}>
                       <Box className={"child-thr-box-container"}>
-                        <Box className={"child-thr-box"}>
+                        <Link to={'/my-products'} className={"child-thr-box"}>
                           <h6>Table 1</h6>
                           <br />
                           <Text as="span">4</Text>
-                        </Box>
-                        <Box className={"child-thr-box"}>
+                        </Link>
+                        <Link to={'/my-products'} className={"child-thr-box"}>
                           <h6>Table 1</h6>
                           <br />
                           <Text as="span">4</Text>
-                        </Box>
+                          </Link>
                       </Box>
                     </Col>
                     <Col md={3}>
                       <Box className={"child-one-box-container"}>
-                        <Box className={"child-one-box"}>
+                      <Link to={'/my-products'} className={"child-one-box"}>
                           <h6>Table 1</h6>
                           <br />
                           <Text as="span">4</Text>
-                        </Box>
-                        <Box className={"child-one-box child-four-box"}>
+                        </Link>
+                        <Link to={'/my-products'} className={"child-one-box child-four-box"}>
                           <h6>Table 1</h6>
                           <br />
                           <Text as="span">4</Text>
-                        </Box>
-                        <Box className={"child-one-box"}>
+                        </Link>
+                        <Link to={'/my-products'} className={"child-one-box"}>
                           <h6>Table 1</h6>
                           <br />
                           <Text as="span">4</Text>
-                        </Box>
+                        </Link>
                       </Box>
                     </Col>
                   </Row>
