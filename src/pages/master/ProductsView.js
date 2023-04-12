@@ -36,11 +36,11 @@ export default function ProductsView() {
         <div>
             <PageLayout>
                 <Row>
-                    <Col md={12}>
+                    {/* <Col md={12}>
                         <CardLayout>
                             <h3>My Products</h3>
                         </CardLayout>
-                    </Col>
+                    </Col> */}
                     <Col md={12}>
                         <Row>
                             <Col md={3} className={'product-checkout-sidebar'}>

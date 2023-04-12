@@ -9,7 +9,9 @@ import { DrawerContext } from "../context/Drawer";
 import { ThemeContext } from "../context/Themes";
 import { Logo } from "../components";
 import data from "../data/master/header.json";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faBell, faLock, faLockOpen, faPlus, faReceipt, faWifi } from "@fortawesome/free-solid-svg-icons";
+import { Text } from "../components/elements";
 export default function Header() {
   const { drawer, toggleDrawer } = useContext(DrawerContext);
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -30,14 +32,18 @@ export default function Header() {
 
   return (
     <Section as="header" className={`mc-header ${scroll}`}>
-      <Logo
+      {/* <Logo
         src={data?.logo.src}
         alt={data?.logo.alt}
         // name={data?.logo.name}
         href={data?.logo.path}
-      />
+      /> */}
       <Box className="mc-header-group">
         <Box className="mc-header-left">
+          <Box>
+            <Text className={'bold floor-bg mr-10 '} as='span'>First Floor Al-Babesi</Text>
+            <Text className={'bold  floor-bg mr-10 '} as='span'>2nd Floor </Text>
+          </Box>
           {/* <Button
             icon={data?.search.icon}
             className="mc-header-icon search"
@@ -62,12 +68,39 @@ export default function Header() {
             onClick={toggleTheme}
             className={`mc-header-icon ${data.theme.addClass}`}
           /> */}
-          {/* <LanguageDropdown
+
+
+          <Box className={'header-right-or '}>
+              <Button className={'header-add-btn'}>
+                <FontAwesomeIcon icon={faPlus} /> New Order
+              </Button>
+          
+            <Box className={' cus-mt-5 cus-btn-outline-fontIcon'}>
+              <FontAwesomeIcon icon={faReceipt} color='#f29b30' />  Receipt <Text className={'r-count'} as={'span'}>0</Text>
+            </Box>
+              <Box className={' cus-mt-5 cus-btn-outline-fontIcon'}>
+                <FontAwesomeIcon icon={faBars} />
+            </Box>
+            <Box className={' cus-mt-5 cus-btn-outline-fontIcon mr-10 '}>
+              <FontAwesomeIcon icon={faLock} color='#f29b30' /> TIS Software
+            </Box>
+
+            <Box className={'bars cus-mt-5  mr-10'}>
+              <FontAwesomeIcon icon={faWifi} color='#f29b30' />
+            </Box>
+             <Box className={'bars cus-mt-5 mr-10'}>
+              <FontAwesomeIcon icon={faBell} color='#f29b30' />
+            </Box>
+
+            {/* <Box className={'bars mr-10'}>
+            <LanguageDropdown
             icon={data.language.icon}
             title={data.language.title}
             addClass={data.language.addClass}
             dropdown={data.language.dropdown}
-          /> */}
+          />
+            </Box> */}
+          </Box>
           {/* <WidgetDropdown
             icon={data.cart.icon}
             title={data.cart.title}

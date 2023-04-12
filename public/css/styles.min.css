@@ -3585,7 +3585,7 @@ textarea.form-control {
     justify-content: start;
     gap: 0px;
     position: fixed;
-    top: -23px;
+    top: 0px;
     left: 0px;
     z-index: 5
 }
@@ -4313,6 +4313,7 @@ textarea.form-control {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    margin-top: 8px;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
