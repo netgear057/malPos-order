@@ -4,19 +4,17 @@ import { Link } from "react-router-dom";
 import { CardLayout } from "../../components/cards";
 import { Box, Text } from "../../components/elements";
 import PageLayout from "../../layouts/PageLayout";
+import { Link } from "react-router-dom";
 
 export default function OrdersLine() {
   return (
     <div>
       <PageLayout>
         <Row>
-            <Col md={12}>
-                <CardLayout>
-                <Row>
-                    <Col md={1}>
-                   
-
-                    </Col>
+          <Col md={12}>
+            <CardLayout>
+              <Row>
+                <Col md={1}></Col>
                 <Col md={10}>
               <h3>Order Place</h3>
               <Box className={"order-line-tables-wrapper"}>
@@ -94,11 +92,9 @@ export default function OrdersLine() {
                   </Row>
                 </Box>
               </Box>
+
+                
           </Col>
-                </Row>
-                </CardLayout>
-            </Col>
-         
         </Row>
       </PageLayout>
     </div>
