@@ -311,6 +311,56 @@ p {
 .red{
   color: red;
 }
+.header-add-btn{
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  padding: 14px 10px;
+  border-radius: 4px;
+  color: #fff;
+  background-color:#f29b30;
+  margin-top: 5px !important;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+
+}
+.border-r-btn{
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  padding: 10px 10px;
+  color: #ee3432;
+  border-right: 2px solid #ee3432;
+  margin-top: 5px !important;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+
+ 
+}
+.cus-btn-outline-fontIcon{
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  color: #ee3432;
+  border-right: 1px solid #ee3432;
+  /* margin-top: 5px !important; */
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+
+}
+.cus-btn-outline{
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  padding: 19px 10px;
+  border-radius: 4px;
+  color: #ee3432;
+  border: 1px solid #ee3432;
+  margin-top: 5px !important;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+
+}
 .cus-btn{
   font-size: 12px;
     font-weight: 500;
@@ -324,6 +374,13 @@ p {
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
 
 }
+.floor-bg{
+  background-color: #112143;
+  color: #fff;
+  padding: 12px 10px;
+  font-size: 13px;
+  border-radius: 4px;
+}
 .cus-btn:hover{
   background-color: #172026;
 }
@@ -334,7 +391,9 @@ p {
 .text-end{
   float: right;
 }
-
+.mr-10{
+  margin-right: 10px;
+}
 .alert-dismissible .btn-close {
   padding: 12px;
 }
@@ -485,8 +544,8 @@ p {
 }
 
 .mc-logo img {
-  height: 137px !important;
-  width: 150px;
+  height: 90px !important;
+  width: 105px;
 }
 
 .mc-logo-group {
@@ -3264,7 +3323,7 @@ textarea.form-control {
           justify-content: start;
   gap: 0px;
   position: fixed;
-  top: -42px;
+  top: 0px;
   left: 0px;
   z-index: 5;
 }
@@ -6656,4 +6715,14 @@ box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px
   padding: 10px;
   margin-top: 5px;
   justify-content: end;
+}
+.header-right-or{
+  display: flex;
+  align-items: center;
+}
+.header-right-or .cus-btn-outline-fontIcon .r-count{
+  padding: 3px;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #172026;
 }
