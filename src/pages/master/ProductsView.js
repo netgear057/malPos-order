@@ -256,6 +256,7 @@ export default function ProductsView() {
                         </Button>
                         <Button onClick={handleShowCat} className={'logo-btn-p'}>
                           <FontAwesomeIcon icon={faB}/>
+
                         </Button>
                         <Modal
                           className={"search-category-model"}
@@ -286,6 +287,7 @@ export default function ProductsView() {
                         <Col md={3}>
                           <div onClick={handleShow}>
                             <ImageCards    
+
                               Imgsrc={"images/product/single/salad.jpg"}
                               productTitle="Expresso lasgana"
                             />

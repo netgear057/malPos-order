@@ -11,7 +11,7 @@ export default function Sidebar() {
     <Section
       as="aside"
       // className={`mc-sidebar thin-scrolling ${drawer ? "active" : ""}`}
-      style={{ width: "55px" }}
+      style={{ width: "55px", backgroundColor: "red" }}
     >
       <MultipleMenu data={data?.navs} />
       {/* <Logout data={data?.button} /> */}
