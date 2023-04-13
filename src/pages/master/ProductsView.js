@@ -7,9 +7,10 @@ import { Box, Input, Label, List } from "../../components/elements";
 import { LabelField } from "../../components/fields";
 import PageLayout from "../../layouts/PageLayout";
 import { Text } from "../../components/elements";
-import { Fontawesome } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { Fontawesome, FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faB, faBars, faGear, faHome, faPlus, faSearch, faStar } from "@fortawesome/free-solid-svg-icons";
 import Sidebar from "../../layouts/Sidebar";
+import ImageCards from "../../components/cards/ImageCards";
 export default function ProductsView() {
   const [show, setShow] = useState(false);
   const [showCate, setShowCat] = useState(false);
@@ -45,9 +46,12 @@ export default function ProductsView() {
           <Col md={12}>
             <Row>
               <Col md={1}>
+                <CardLayout >
                 <Sidebar />
+
+                </CardLayout>
               </Col>
-              <Col md={2} className={"product-checkout-sidebar"}>
+              <Col md={3} className={"product-checkout-sidebar"}>
                 <Row>
                   <Col md={12}>
                     <CardLayout>
@@ -228,20 +232,31 @@ export default function ProductsView() {
                   </Col>
                 </Row>
               </Col>
-              <Col md={9}>
+              <Col md={8}>
                 <CardLayout>
                   <Row>
-                    <Col md={8}>
-                      <LabelField
-                        fieldSize={"w100"}
-                        type={"search"}
-                        placeholder={"Search product"}
-                      />
+                    <Col md={7}>
+                    <Button onClick={handleShowCat} className={'logo-btn-p'}>
+                          <FontAwesomeIcon icon={faHome}/>
+                        </Button>
                     </Col>
-                    <Col md={4}>
+                    <Col md={5}>
                       <Box className={"search-btn-box"}>
-                        <Button onClick={handleShowCat} className="a">
-                          Search
+                        <Button onClick={handleShowCat} className={'logo-btn-p'}>
+                          <FontAwesomeIcon icon={faSearch}/>
+                        </Button>
+                        <Button onClick={handleShowCat} className={'logo-btn-p'}>
+                          <FontAwesomeIcon icon={faBars}/>
+                        </Button>
+                        <Button onClick={handleShowCat} className={'logo-btn-p'}>
+                          <FontAwesomeIcon icon={faGear}/>
+                        </Button>
+                        <Button onClick={handleShowCat} className={'logo-btn-p'}>
+                          <FontAwesomeIcon icon={faStar}/>
+                        </Button>
+                        <Button onClick={handleShowCat} className={'logo-btn-p'}>
+                          <FontAwesomeIcon icon={faB}/>
+
                         </Button>
                         <Modal
                           className={"search-category-model"}
@@ -269,12 +284,12 @@ export default function ProductsView() {
 
                     <Col md={12}>
                       <Row>
-                        <Col md={4}>
+                        <Col md={3}>
                           <div onClick={handleShow}>
-                            <ProductCard
-                              //   buttonTitle={"Buy Now"}
-                              //   cardTitle={"Capcicum Salads(245kg) "}
+                            <ImageCards    
+
                               Imgsrc={"images/product/single/salad.jpg"}
+                              productTitle="Expresso lasgana"
                             />
                           </div>
                           <Modal
@@ -330,12 +345,11 @@ export default function ProductsView() {
                             </Modal.Footer>
                           </Modal>
                         </Col>
-                        <Col md={4}>
+                        <Col md={3}>
                           <div onClick={handleShowAdd}>
-                            <ProductCard
-                              buttonTitle={"Buy Now"}
-                              cardTitle={"Capcicum Salads(245kg) "}
+                          <ImageCards    
                               Imgsrc={"images/product/single/salad.jpg"}
+                              productTitle="Expresso lasgana"
                             />
                           </div>
                           <Modal
@@ -505,26 +519,23 @@ export default function ProductsView() {
                             </Modal.Footer>
                           </Modal>
                         </Col>{" "}
-                        <Col md={4}>
-                          <ProductCard
-                            buttonTitle={"Buy Now"}
-                            cardTitle={"Capcicum Salads(245kg) "}
-                            Imgsrc={"images/product/single/salad.jpg"}
-                          />
+                        <Col md={3}>
+                          <ImageCards    
+                              Imgsrc={"images/product/single/salad.jpg"}
+                              productTitle="Expresso lasgana"
+                            />
                         </Col>{" "}
-                        <Col md={4}>
-                          <ProductCard
-                            buttonTitle={"Buy Now"}
-                            cardTitle={"Capcicum Salads(245kg) "}
-                            Imgsrc={"images/product/single/salad.jpg"}
-                          />
+                        <Col md={3}>
+                          <ImageCards    
+                              Imgsrc={"images/product/single/salad.jpg"}
+                              productTitle="Expresso lasgana"
+                            />
                         </Col>{" "}
-                        <Col md={4}>
-                          <ProductCard
-                            buttonTitle={"Buy Now"}
-                            cardTitle={"Capcicum Salads(245kg) "}
-                            Imgsrc={"images/product/single/salad.jpg"}
-                          />
+                        <Col md={3}>
+                          <ImageCards    
+                              Imgsrc={"images/product/single/salad.jpg"}
+                              productTitle="Expresso lasgana"
+                            />
                         </Col>
                       </Row>
                     </Col>

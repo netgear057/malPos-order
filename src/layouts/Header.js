@@ -4,6 +4,7 @@ import {
   WidgetDropdown,
   ProfileDropdown,
 } from "../components/header";
+import { Modal,Row,Col } from 'react-bootstrap';
 import { Button, Section, Box, Input } from "../components/elements";
 import { DrawerContext } from "../context/Drawer";
 import { ThemeContext } from "../context/Themes";
@@ -13,10 +14,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
   faBell,
+  faBicycle,
+  faBox,
   faLock,
   faLockOpen,
   faPlus,
   faReceipt,
+  faStore,
   faWifi,
 } from "@fortawesome/free-solid-svg-icons";
 import { Text } from "../components/elements";
@@ -26,6 +30,14 @@ export default function Header() {
   const searchRef = useRef();
   const [scroll, setScroll] = useState("fixed");
   const [search, setSearch] = useState("");
+  const [show, setShow] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleItemClick = (index) => {
+    setActiveIndex(index);
+  };
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   window.addEventListener("scroll", () => {
     if (window.pageYOffset > 0) setScroll("sticky");
@@ -49,12 +61,21 @@ export default function Header() {
       <Box className="mc-header-group">
         <Box className="mc-header-left">
           <Box>
-            <Text className={"bold floor-bg mr-10 "} as="span">
-              First Floor Al-Babesi
-            </Text>
-            <Text className={"bold  floor-bg mr-10 "} as="span">
-              2nd Floor{" "}
-            </Text>
+          <Text
+            className={`bold floor-bg mr-10 ${activeIndex === 0 ? 'active' : ''}`}
+            as="span"
+            onClick={() => handleItemClick(0)}
+          >
+            First Floor Al-Babesi
+          </Text>
+         
+          <Text
+            className={`bold floor-bg mr-10 ${activeIndex === 1 ? 'active' : ''}`}
+            as="span"
+            onClick={() => handleItemClick(1)}
+          >
+            2nd Floor
+          </Text>
           </Box>
           {/* <Button
             icon={data?.search.icon}
@@ -82,10 +103,33 @@ export default function Header() {
           /> */}
 
           <Box className={"header-right-or "}>
-            <Button className={"header-add-btn"}>
+            <Button onClick={handleShow} className={"header-add-btn"}>
               <FontAwesomeIcon icon={faPlus} /> New Order
             </Button>
+            <Modal className="new-order-model" show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+        </Modal.Header>
+        <Modal.Body>
+         <Row className="text-center">
+          <Col md={4}>
+            <FontAwesomeIcon icon={faStore} size={'2x'}/><br/>
+            <Text className={'new-order-model-text f-13 bold'} as='span'>In-Store</Text>
+          </Col>
+          <Col md={4}>
+          <FontAwesomeIcon icon={faBicycle} size={'2x'}/><br/>
 
+            <Text className={'new-order-model-text f-13 bold'} as='span'>Delivery</Text>
+          </Col>
+          <Col md={4}>
+          <FontAwesomeIcon icon={faBox} size={'2x'}/><br/>
+
+            <Text className={'new-order-model-text f-13 bold'} as='span'>Takeaway</Text>
+          </Col>
+         </Row>
+        </Modal.Body>
+      
+      </Modal>
+     
             <Box className={" cus-mt-5 cus-btn-outline-fontIcon"}>
               <FontAwesomeIcon icon={faReceipt} color="#f29b30" /> Receipt{" "}
               <Text className={"r-count"} as={"span"}>
