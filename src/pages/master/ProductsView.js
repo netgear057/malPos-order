@@ -241,7 +241,7 @@ export default function ProductsView() {
                     <Col md={4}>
                       <Box className={"search-btn-box"}>
                         <Button onClick={handleShowCat} className="a">
-                          Seach
+                          Search
                         </Button>
                         <Modal
                           className={"search-category-model"}
@@ -272,8 +272,8 @@ export default function ProductsView() {
                         <Col md={4}>
                           <div onClick={handleShow}>
                             <ProductCard
-                              buttonTitle={"Buy Now"}
-                              cardTitle={"Capcicum Salads(245kg) "}
+                              //   buttonTitle={"Buy Now"}
+                              //   cardTitle={"Capcicum Salads(245kg) "}
                               Imgsrc={"images/product/single/salad.jpg"}
                             />
                           </div>
