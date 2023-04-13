@@ -10,10 +10,11 @@ export default function Sidebar() {
   return (
     <Section
       as="aside"
-      className={`mc-sidebar thin-scrolling ${drawer ? "active" : ""}`}
+      // className={`mc-sidebar thin-scrolling ${drawer ? "active" : ""}`}
+      style={{ width: "55px" }}
     >
       <MultipleMenu data={data?.navs} />
-      <Logout data={data?.button} />
+      {/* <Logout data={data?.button} /> */}
     </Section>
   );
 }
