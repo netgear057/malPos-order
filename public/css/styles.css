@@ -148,9 +148,15 @@ h5 {
   font-weight: bolder !important;
   color: var(--headingColor) !important;
 }
-
+.ptb-10
+{
+  padding: 10px 0px;
+}
 .pl-7 {
   padding: 10px 7px !important;
+}
+.border-top{
+  border-top: 1px solid #071739 !important;
 }
 .f-13 {
   font-size: 13px;
@@ -325,6 +331,9 @@ p {
 }
 .text-center{
   text-align: center;
+}
+.text-end{
+  text-align: end;
 }
 .header-add-btn {
   font-size: 12px;
@@ -6818,7 +6827,6 @@ textarea.form-control {
   font-weight: bold;
 }
 .product-checkout-sidebar {
-  width: 100%;
 }
 
 .products-view-box {
@@ -6951,12 +6959,15 @@ textarea.form-control {
 /* nw order model */
  
 .new-order-model .modal-content {
-  width: 400px;
+  width: 300px;
 }
 .new-order-model .modal-header {
-  padding: 10px;
+  padding: 20px;
   margin-bottom: 0px;
 }
 .new-order-model .modal-header .modal-title {
   font-size: 18px;
+}
+.pv-receipt-box{
+  min-height: 300px;
 }

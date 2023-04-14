@@ -5,7 +5,7 @@ import {
   ProfileDropdown,
 } from "../components/header";
 import { Modal,Row,Col } from 'react-bootstrap';
-import { Button, Section, Box, Input } from "../components/elements";
+import { Button, Section, Box, Input, List } from "../components/elements";
 import { DrawerContext } from "../context/Drawer";
 import { ThemeContext } from "../context/Themes";
 import { Logo } from "../components";
@@ -111,19 +111,30 @@ export default function Header() {
         </Modal.Header>
         <Modal.Body>
          <Row className="text-center">
-          <Col md={4}>
-            <FontAwesomeIcon icon={faStore} size={'2x'}/><br/>
+          <Col md={4} className="mt-0">
+            <FontAwesomeIcon icon={faStore} size={'1x'}/><br/>
             <Text className={'new-order-model-text f-13 bold'} as='span'>In-Store</Text>
           </Col>
-          <Col md={4}>
-          <FontAwesomeIcon icon={faBicycle} size={'2x'}/><br/>
+          <Col md={4} className="mt-0">
+          <FontAwesomeIcon icon={faBicycle} size={'1x'}/><br/>
 
             <Text className={'new-order-model-text f-13 bold'} as='span'>Delivery</Text>
           </Col>
-          <Col md={4}>
-          <FontAwesomeIcon icon={faBox} size={'2x'}/><br/>
+          <Col md={4}className="mt-0">
+          <FontAwesomeIcon icon={faBox} size={'1x'}/><br/>
 
             <Text className={'new-order-model-text f-13 bold'} as='span'>Takeaway</Text>
+          </Col>
+          <Col md={12}>
+            <Box className={'f-13 bold border-top ptb-10'}>
+              <button className={'bold'} >Delivery</button>
+            </Box>
+            <Box className={'f-13 bold border-top ptb-10'}>
+              <button className={'bold'} >Humentation</button>
+            </Box>
+            <Box className={'f-13 bold border-top ptb-10'}>
+              <button className={'bold'} >Takeaway</button>
+            </Box>
           </Col>
          </Row>
         </Modal.Body>
