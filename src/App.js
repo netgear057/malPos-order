@@ -36,6 +36,7 @@ import {
 import OrdersLine from "./pages/master/OrdersLine";
 import ProductsView from "./pages/master/ProductsView";
 import OrderReceipt from "./pages/master/OrderReceipt";
+import ProductDetails from "./pages/master/ProductDetails";
 
 export default function App() {
   return (
@@ -47,9 +48,10 @@ export default function App() {
             {/* Sk Maplos-line Orders */}
             <Route path="/orders-line" element={<OrdersLine />} />
             <Route path="/my-products" element={<ProductsView />} />
+            <Route path="/product-details" element={<ProductDetails />} />
             <Route path="/order-receipt" element={<OrderReceipt />} />
 
-            <Route path="/ecommerce" element={<Ecommerce />} />
+            <Route path="/ecommerce" element={<OrdersLine />} />
             <Route path="/analytics" element={<Analytics />} />
             <Route path="/crm" element={<CRM />} />
             <Route path="/login" element={<Login />} />
