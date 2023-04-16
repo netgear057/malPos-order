@@ -35,6 +35,7 @@ import {
 } from "./pages/master";
 import OrdersLine from "./pages/master/OrdersLine";
 import ProductsView from "./pages/master/ProductsView";
+import OrderReceipt from "./pages/master/OrderReceipt";
 
 export default function App() {
   return (
@@ -46,6 +47,7 @@ export default function App() {
             {/* Sk Maplos-line Orders */}
             <Route path="/orders-line" element={<OrdersLine />} />
             <Route path="/my-products" element={<ProductsView />} />
+            <Route path="/order-receipt" element={<OrderReceipt />} />
 
             <Route path="/ecommerce" element={<Ecommerce />} />
             <Route path="/analytics" element={<Analytics />} />

@@ -148,6 +148,15 @@ h5 {
   font-weight: bolder !important;
   color: var(--headingColor) !important;
 }
+.field-w-100{
+  width: 100px;
+}
+.field-w-150{
+  width: 150px;
+}
+.field-w-200{
+  width: 200px;
+}
 .ptb-10
 {
   padding: 10px 0px;
@@ -335,6 +344,9 @@ p {
 .text-end{
   text-align: end;
 }
+.verticle-align-m{
+  vertical-align: middle;
+}
 .header-add-btn {
   font-size: 12px;
   font-weight: 500;
@@ -426,7 +438,9 @@ p {
 .alert-dismissible .btn-close {
   padding: 12px;
 }
-
+.secound-color{
+  color: #f29b30;
+}
 .mc-alert {
   padding: 18px 20px 20px;
   margin-bottom: 30px;
@@ -6970,4 +6984,14 @@ textarea.form-control {
 }
 .pv-receipt-box{
   min-height: 300px;
+}
+/* open receipt  */
+.open-receipt-box{
+  display: flex;
+}
+.open-receipt-span{
+  padding: 1px 8px;
+  border-radius: 2px;
+  background-color: #ee3432;
+  color: #fff;
 }
