@@ -4,13 +4,15 @@ import {
   WidgetDropdown,
   ProfileDropdown,
 } from "../components/header";
-import { Modal,Row,Col } from 'react-bootstrap';
+import { Modal, Row, Col } from "react-bootstrap";
 import { Button, Section, Box, Input, List } from "../components/elements";
 import { DrawerContext } from "../context/Drawer";
 import { ThemeContext } from "../context/Themes";
 import { Logo } from "../components";
 import data from "../data/master/header.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
+
 import {
   faBars,
   faBell,
@@ -24,7 +26,8 @@ import {
   faWifi,
 } from "@fortawesome/free-solid-svg-icons";
 import { Text } from "../components/elements";
-export default function Header(props) {
+import OrdersLine from "../pages/master/OrdersLine";
+export default function Header() {
   const { drawer, toggleDrawer } = useContext(DrawerContext);
   const { theme, toggleTheme } = useContext(ThemeContext);
   const searchRef = useRef();
@@ -60,29 +63,33 @@ export default function Header(props) {
       /> */}
       <Box className="mc-header-group">
         <Box className="mc-header-left">
-          <Box>
-          <Text
-            className={`bold floor-bg mr-10 ${activeIndex === 0 ? 'active' : ''}`}
-            as="span"
-            onClick={() => handleItemClick(0)}
-          >
-            Open
-          </Text>
-         
-          <Text
-            className={`bold floor-bg mr-10 ${activeIndex === 1 ? 'active' : ''}`}
-            as="span"
-            onClick={() => handleItemClick(1)}
-          >
-            Achive
-          </Text>
-          <Text
-            className={`bold floor-bg mr-10 ${activeIndex === 2 ? 'active' : ''}`}
-            as="span"
-            onClick={() => handleItemClick(2)}
-          >
-            Offline achive
-          </Text>
+          <Box style={{ marginTop: "-18px" }}>
+            <Logo
+              src={data?.logo.src}
+              alt={data?.logo.alt}
+              // name={data?.logo.name}
+              href={data?.logo.path}
+            />
+            {/* <Text
+              className={`bold floor-bg mr-10 ${
+                activeIndex === 0 ? "active" : ""
+              }`}
+              as="span"
+              onClick={() => handleItemClick(0)}
+            >
+              First Floor Al-Babesi
+            </Text> */}
+
+            {/* <Text
+              className={`bold floor-bg mr-10 ${
+                activeIndex === 1 ? "active" : ""
+              }`}
+              as="span"
+              onClick={() => handleItemClick(1)}
+              id="1"
+            >
+              2nd Floor
+            </Text> */}
           </Box>
           {/* <Button
             icon={data?.search.icon}
@@ -114,40 +121,61 @@ export default function Header(props) {
               <FontAwesomeIcon icon={faPlus} /> New Order
             </Button>
             <Modal className="new-order-model" show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-        </Modal.Header>
-        <Modal.Body>
-         <Row className="text-center">
-          <Col md={4} className="mt-0">
-            <FontAwesomeIcon icon={faStore} size={'1x'}/><br/>
-            <Text className={'new-order-model-text f-13 bold'} as='span'>In-Store</Text>
-          </Col>
-          <Col md={4} className="mt-0">
-          <FontAwesomeIcon icon={faBicycle} size={'1x'}/><br/>
+              <Modal.Header closeButton></Modal.Header>
+              <Modal.Body>
+                <Row className="text-center">
+                  <Col md={4} className="mt-0">
+                    <Link to="/my-products" onClick={handleClose}>
+                      <FontAwesomeIcon icon={faStore} size={"1x"} />
+                      <br />
+                      <Text
+                        className={"new-order-model-text f-13 bold"}
+                        as="span"
+                      >
+                        In-Store
+                      </Text>
+                    </Link>
+                  </Col>
+                  <Col md={4} className="mt-0">
+                    <Link to="/my-products" onClick={handleClose}>
+                      <FontAwesomeIcon icon={faBicycle} size={"1x"} />
+                      <br />
 
-            <Text className={'new-order-model-text f-13 bold'} as='span'>Delivery</Text>
-          </Col>
-          <Col md={4}className="mt-0">
-          <FontAwesomeIcon icon={faBox} size={'1x'}/><br/>
+                      <Text
+                        className={"new-order-model-text f-13 bold"}
+                        as="span"
+                      >
+                        Delivery
+                      </Text>
+                    </Link>
+                  </Col>
+                  <Col md={4} className="mt-0">
+                    <Link to="/my-products" onClick={handleClose}>
+                      <FontAwesomeIcon icon={faBox} size={"1x"} />
+                      <br />
 
-            <Text className={'new-order-model-text f-13 bold'} as='span'>Takeaway</Text>
-          </Col>
-          <Col md={12}>
-            <Box className={'f-13 bold border-top ptb-10'}>
-              <button className={'bold'} >Delivery</button>
-            </Box>
-            <Box className={'f-13 bold border-top ptb-10'}>
-              <button className={'bold'} >Humentation</button>
-            </Box>
-            <Box className={'f-13 bold border-top ptb-10'}>
-              <button className={'bold'} >Takeaway</button>
-            </Box>
-          </Col>
-         </Row>
-        </Modal.Body>
-      
-      </Modal>
-     
+                      <text className="new-order-model-text f-13 bold">
+                        Takeaway
+                      </text>
+                    </Link>
+                  </Col>
+                  <Col md={12}>
+                    <Box className={"f-13 bold border-top ptb-10"}>
+                      <Link to="/my-products" onClick={handleClose}>
+                        <button className={"bold"}>Delivery</button>
+                      </Link>
+                    </Box>
+                    <Box className={"f-13 bold border-top ptb-10"}>
+                      <button className={"bold"}>Humentation</button>
+                    </Box>
+                    <Box className={"f-13 bold border-top ptb-10"}>
+                      <button className={"bold"}>Takeaway</button>
+                    </Box>
+                  </Col>
+                </Row>
+              </Modal.Body>
+            </Modal>
+
             <Box className={" cus-mt-5 cus-btn-outline-fontIcon"}>
               <FontAwesomeIcon icon={faReceipt} color="#f29b30" /> Receipt{" "}
               <Text className={"r-count"} as={"span"}>
@@ -206,6 +234,5 @@ export default function Header(props) {
         </Box>
       </Box>
     </Section>
-   
   );
 }
