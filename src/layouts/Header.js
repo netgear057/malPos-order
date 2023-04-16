@@ -24,7 +24,7 @@ import {
   faWifi,
 } from "@fortawesome/free-solid-svg-icons";
 import { Text } from "../components/elements";
-export default function Header() {
+export default function Header(props) {
   const { drawer, toggleDrawer } = useContext(DrawerContext);
   const { theme, toggleTheme } = useContext(ThemeContext);
   const searchRef = useRef();
@@ -66,7 +66,7 @@ export default function Header() {
             as="span"
             onClick={() => handleItemClick(0)}
           >
-            First Floor Al-Babesi
+            Open
           </Text>
          
           <Text
@@ -74,7 +74,14 @@ export default function Header() {
             as="span"
             onClick={() => handleItemClick(1)}
           >
-            2nd Floor
+            Achive
+          </Text>
+          <Text
+            className={`bold floor-bg mr-10 ${activeIndex === 2 ? 'active' : ''}`}
+            as="span"
+            onClick={() => handleItemClick(2)}
+          >
+            Offline achive
           </Text>
           </Box>
           {/* <Button
@@ -199,5 +206,6 @@ export default function Header() {
         </Box>
       </Box>
     </Section>
+   
   );
 }

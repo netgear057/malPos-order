@@ -11,7 +11,7 @@ export default function PageLayout({ children }) {
 
   return (
     <DrawerProvider>
-      <Header />
+  
       {/* <Sidebar /> */}
       <Main>
         <>
