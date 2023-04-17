@@ -5,14 +5,15 @@ import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 import { useLocation } from "react-router-dom";
 import { DrawerProvider } from "../context/Drawer";
+import BackSidebar from "./BackSidebar";
 
-export default function PageLayout({ children }) {
+export default function LayoutWithoutSidebar({ children }) {
   const location = useLocation();
 
   return (
     <DrawerProvider>
+      <BackSidebar/>
       <Header />
-      <Sidebar />
       <Main>
         <>
           {children}

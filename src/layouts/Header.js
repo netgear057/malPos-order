@@ -34,11 +34,7 @@ export default function Header() {
   const [scroll, setScroll] = useState("fixed");
   const [search, setSearch] = useState("");
   const [show, setShow] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const handleItemClick = (index) => {
-    setActiveIndex(index);
-  };
+ 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -63,7 +59,7 @@ export default function Header() {
       /> */}
       <Box className="mc-header-group">
         <Box className="mc-header-left">
-          <Box style={{ marginTop: "-18px" }}>
+          <Box className={'logo-div'}>
             <Logo
               src={data?.logo.src}
               alt={data?.logo.alt}
@@ -176,24 +172,25 @@ export default function Header() {
               </Modal.Body>
             </Modal>
 
-            <Box className={" cus-mt-5 cus-btn-outline-fontIcon"}>
+          <Link to={'/order-receipt'}> <button className={" cus-mt-5 cus-btn-outline-fontIcon"}>
               <FontAwesomeIcon icon={faReceipt} color="#f29b30" /> Receipt{" "}
               <Text className={"r-count"} as={"span"}>
                 0
               </Text>
-            </Box>
-            <Box className={" cus-mt-5 cus-btn-outline-fontIcon"}>
+            </button>
+            </Link>
+            <button className={" cus-mt-5 cus-btn-outline-fontIcon"}>
               <FontAwesomeIcon icon={faBars} />
-            </Box>
-            <Box className={" cus-mt-5 cus-btn-outline-fontIcon mr-10 "}>
+            </button>
+            <button className={" cus-mt-5 cus-btn-outline-fontIcon mr-10 "}>
               <FontAwesomeIcon icon={faLock} color="#f29b30" /> TIS Software
-            </Box>
-            <Box className={"bars cus-mt-5 mr-10"}>
+            </button>
+            <button className={"bars cus-mt-5 mr-10"}>
               <FontAwesomeIcon icon={faBell} color="#f29b30" />
-            </Box>
-            <Box className={"bars cus-mt-5  mr-10"}>
+            </button>
+            <button className={"bars cus-mt-5  mr-10"}>
               <FontAwesomeIcon icon={faWifi} color="#f29b30" />
-            </Box>
+            </button>
 
             {/* <Box className={'bars mr-10'}>
             <LanguageDropdown

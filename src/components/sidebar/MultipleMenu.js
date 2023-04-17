@@ -2,6 +2,8 @@ import React from "react";
 import MenuItem from "./MenuItem";
 import { List, Menu, Heading } from "../elements";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 export default function MultipleMenu({ data }) {
   const navigate = useNavigate();
@@ -16,7 +18,7 @@ export default function MultipleMenu({ data }) {
               style={{ marginLeft: "13px", fontSize: "20px" }}
               onClick={() => navigate(-1)}
             >
-              &larr;
+             <FontAwesomeIcon icon={faArrowLeft}/>
             </button>
 
             {item.menu.map((item, index) => (
