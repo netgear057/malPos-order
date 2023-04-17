@@ -182,6 +182,7 @@ h5 {
 p {
   margin: 0px;
 }
+.cus
 
 html,
 body {
@@ -415,12 +416,16 @@ p {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+.floor-bg{
+  cursor: pointer;
+}
 .floor-bg.active {
   background-color: #112143;
   color: #fff;
   padding: 12px 10px;
   font-size: 13px;
   border-radius: 4px;
+  cursor: pointer;
 }
 .cus-btn:hover {
   background-color: #172026;
@@ -587,8 +592,9 @@ p {
 }
 
 .mc-logo img {
-  height: 90px !important;
   width: 105px;
+  height: 76px;
+
 }
 
 .mc-logo-group {
