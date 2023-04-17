@@ -473,7 +473,7 @@ p {
 }
 
 .mc-logo img {
-    height: 76px;
+    height: 85px;
 }
 
 .mc-logo-group {
@@ -3668,6 +3668,7 @@ textarea.form-control {
 
 .mc-header-left {
     display: -webkit-box;
+    position: relative;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
@@ -3678,7 +3679,9 @@ textarea.form-control {
     justify-content: flex-start;
     gap: 18px
 }
-
+.mc-header-left .logo-div{
+    position: absolute;
+}
 @media(max-width: 767px) {
     .mc-header-left {
         gap: 15px
@@ -4422,7 +4425,9 @@ textarea.form-control {
 }
 
 .mc-sidebar-menu {
-    margin-bottom: 25px
+    margin-bottom: 25px;
+    margin-top: 27px;
+    float: left;
 }
 
 .mc-sidebar-menu-title {
@@ -4685,7 +4690,7 @@ textarea.form-control {
 }
 
 .mc-main.active {
-    margin-left: 0px
+    margin-left:50px
 }
 
 @media(max-width: 991px) {

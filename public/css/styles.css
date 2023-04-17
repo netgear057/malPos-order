@@ -148,6 +148,9 @@ h5 {
   font-weight: bolder !important;
   color: var(--headingColor) !important;
 }
+.h-45{
+  height: 45px;
+}
 .field-w-100{
   width: 100px;
 }
@@ -182,7 +185,11 @@ h5 {
 p {
   margin: 0px;
 }
-.cus
+.cusTabsbuttons{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 
 html,
 body {
@@ -6953,8 +6960,20 @@ textarea.form-control {
   color: #fff;
   background-color: #172026;
 }
+.product-img-card{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.product-img-card .imgCard{
+  width: 175px;
+  height: 80px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
 .image-card-box{
-  height: 100px;
+  height: 100%;
+  width: 100%;
   border-radius: 4px;
   box-sizing: border-box;
   overflow: hidden;
@@ -7000,4 +7019,10 @@ textarea.form-control {
   border-radius: 2px;
   background-color: #ee3432;
   color: #fff;
+}
+.search-model .modal-content{
+  width: 600px;
+}
+.search-model .modal-body{
+  padding: 30px 20px;
 }

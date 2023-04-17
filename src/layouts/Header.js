@@ -59,7 +59,7 @@ export default function Header() {
       /> */}
       <Box className="mc-header-group">
         <Box className="mc-header-left">
-          <Box style={{ marginTop: "-28px" }}>
+          <Box className={'logo-div'}>
             <Logo
               src={data?.logo.src}
               alt={data?.logo.alt}
