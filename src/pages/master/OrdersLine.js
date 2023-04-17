@@ -7,6 +7,9 @@ import PageLayout from "../../layouts/PageLayout";
 import OrderLineTable1 from "./OrderLineTable1";
 import CusTabButtons from "../../components/elements/CusTabButtons";
 import OrderLineTable2 from "./OrderLineTable2";
+import Sidebar from "../../layouts/Sidebar";
+import LayoutWithoutSidebar from "../../layouts/LayoutWithoutSidebar";
+import LayoutMain from "../../layouts/LayoutMain";
 
 export default function OrdersLine() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -21,10 +24,10 @@ export default function OrdersLine() {
   ];
   return (
     <div>
-      <PageLayout>
+      <LayoutMain>
         <Row>
           <Col md={12}>
-            <CardLayout className={'f-13 cusTabsbuttons'}>
+            <CardLayout className={"f-13 cusTabsbuttons"}>
               {buttonList.map((buttonText) => (
                 <CusTabButtons
                   key={buttonText.index}
@@ -35,12 +38,10 @@ export default function OrdersLine() {
               ))}
             </CardLayout>
           </Col>
-          {
-            activeIndex === 0 && <OrderLineTable1 />  
-          }
+          {activeIndex === 0 && <OrderLineTable1 />}
           {activeIndex === 1 && <OrderLineTable2 />}
         </Row>
-      </PageLayout>
+      </LayoutMain>
     </div>
   );
 }

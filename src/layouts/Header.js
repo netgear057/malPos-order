@@ -34,7 +34,7 @@ export default function Header() {
   const [scroll, setScroll] = useState("fixed");
   const [search, setSearch] = useState("");
   const [show, setShow] = useState(false);
- 
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -59,7 +59,7 @@ export default function Header() {
       /> */}
       <Box className="mc-header-group">
         <Box className="mc-header-left">
-          <Box className={'logo-div'}>
+          <Box className={"logo-div"}>
             <Logo
               src={data?.logo.src}
               alt={data?.logo.alt}
@@ -121,7 +121,11 @@ export default function Header() {
               <Modal.Body>
                 <Row className="text-center">
                   <Col md={4} className="mt-0">
-                    <Link to="/my-products" onClick={handleClose}>
+                    <Link
+                      to="/my-products"
+                      onClick={handleClose}
+                      state={{ service: "In-Store" }}
+                    >
                       <FontAwesomeIcon icon={faStore} size={"1x"} />
                       <br />
                       <Text
@@ -133,7 +137,11 @@ export default function Header() {
                     </Link>
                   </Col>
                   <Col md={4} className="mt-0">
-                    <Link to="/my-products" onClick={handleClose}>
+                    <Link
+                      to="/my-products"
+                      onClick={handleClose}
+                      state={{ service: "Delivery" }}
+                    >
                       <FontAwesomeIcon icon={faBicycle} size={"1x"} />
                       <br />
 
@@ -146,38 +154,60 @@ export default function Header() {
                     </Link>
                   </Col>
                   <Col md={4} className="mt-0">
-                    <Link to="/my-products" onClick={handleClose}>
+                    <Link
+                      to="/my-products"
+                      onClick={handleClose}
+                      state={{ service: "Takeaway" }}
+                    >
                       <FontAwesomeIcon icon={faBox} size={"1x"} />
                       <br />
 
-                      <text className="new-order-model-text f-13 bold">
+                      <Text className="new-order-model-text f-13 bold">
                         Takeaway
-                      </text>
+                      </Text>
                     </Link>
                   </Col>
                   <Col md={12}>
                     <Box className={"f-13 bold border-top ptb-10"}>
-                      <Link to="/my-products" onClick={handleClose}>
-                        <button className={"bold"}>Delivery</button>
+                      <Link
+                        to="/my-products"
+                        onClick={handleClose}
+                        state={{ service: "dwe" }}
+                      >
+                        <button className={"bold"}>dwe</button>
                       </Link>
                     </Box>
                     <Box className={"f-13 bold border-top ptb-10"}>
-                      <button className={"bold"}>Humentation</button>
+                      <Link
+                        to="/my-products"
+                        onClick={handleClose}
+                        state={{ service: "Hungerstation" }}
+                      >
+                        <button className={"bold"}>Hungerstation</button>
+                      </Link>
                     </Box>
                     <Box className={"f-13 bold border-top ptb-10"}>
-                      <button className={"bold"}>Takeaway</button>
+                      <Link
+                        to="/my-products"
+                        onClick={handleClose}
+                        state={{ service: "Marsool" }}
+                      >
+                        <button className={"bold"}>Marsool</button>
+                      </Link>
                     </Box>
                   </Col>
                 </Row>
               </Modal.Body>
             </Modal>
 
-          <Link to={'/order-receipt'}> <button className={" cus-mt-5 cus-btn-outline-fontIcon"}>
-              <FontAwesomeIcon icon={faReceipt} color="#f29b30" /> Receipt{" "}
-              <Text className={"r-count"} as={"span"}>
-                0
-              </Text>
-            </button>
+            <Link to={"/order-receipt"}>
+              {" "}
+              <button className={" cus-mt-5 cus-btn-outline-fontIcon"}>
+                <FontAwesomeIcon icon={faReceipt} color="#f29b30" /> Receipt{" "}
+                <Text className={"r-count"} as={"span"}>
+                  0
+                </Text>
+              </button>
             </Link>
             <button className={" cus-mt-5 cus-btn-outline-fontIcon"}>
               <FontAwesomeIcon icon={faBars} />

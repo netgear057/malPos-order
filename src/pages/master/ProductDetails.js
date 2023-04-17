@@ -8,6 +8,8 @@ import { LabelField } from "../../components/fields";
 import PageLayout from "../../layouts/PageLayout";
 import { Text } from "../../components/elements";
 import { Fontawesome, FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import data from "../../data/master/productList.json";
+
 import {
   faB,
   faBars,
@@ -17,16 +19,22 @@ import {
   faSearch,
   faStar,
 } from "@fortawesome/free-solid-svg-icons";
-import Sidebar from "../../layouts/Sidebar";
 import ImageCards from "../../components/cards/ImageCards";
 import ProductViewReceipt from "./ProductViewReceipt";
-import { MultipleMenu } from "../../components/sidebar";
+import { Link, useLocation } from "react-router-dom";
 
 export default function ProductDetails() {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const [showAdd, setShowAdd] = useState(false);
-
+  const [selectedItem, setSelectedItem] = useState("");
   const handleShowAdd = () => setShowAdd(true);
-
+  const location = useLocation();
+  // const service = location.state;
+  const { id, service } = location.state;
+  console.log(service);
+  console.log(id);
   const myList = [
     { name: "Lasgana 220 Kg", qty: 2, subtotal: 10 },
     { name: "Large Pizza", qty: 1, subtotal: 5 },
@@ -39,30 +47,63 @@ export default function ProductDetails() {
         <Row>
           <Col md={12}>
             <Row>
-              <Col md={1}>
+              {/* <Col md={1}>
                 <CardLayout>
                   <Sidebar />
-                  {/* <MultipleMenu data={data?.navs} /> */}
+                  <MultipleMenu data={data?.navs} />
                 </CardLayout>
-              </Col>
+              </Col> */}
               <Col md={4}>
                 <Row>
-                  <ProductViewReceipt />
+                  <ProductViewReceipt id={service.service} />
                 </Row>
               </Col>
               <Col md={7}>
                 <CardLayout>
                   <Row>
                     <Col md={7}>
-                      <Button className={"logo-btn-p"}>
-                        <FontAwesomeIcon icon={faHome} />
-                      </Button>
+                      <Row>
+                        <Col md={2}>
+                          <Link to="/orders-line">
+                            <Button className={"logo-btn-p"}>
+                              <FontAwesomeIcon icon={faHome} />
+                            </Button>
+                          </Link>
+                        </Col>
+                        <Col md={5}>
+                          {data.product.tbody
+                            .filter((item) => {
+                              return item.id == id;
+                            })
+                            .map((item, i) => (
+                              <Text>{item.heading}</Text>
+                            ))}
+                        </Col>
+                        {/* <Text>
+                        {id[0].toUpperCase() + id.slice(1).replaceAll("-", " ")}
+                      </Text> */}
+                      </Row>
                     </Col>
+
                     <Col md={5}>
                       <Box className={"search-btn-box"}>
-                        <Button className={"logo-btn-p"}>
+                        <Button onClick={handleShow} className={"logo-btn-p"}>
                           <FontAwesomeIcon icon={faSearch} />
                         </Button>
+                        <Modal
+                          className="search-model"
+                          show={show}
+                          onHide={handleClose}
+                        >
+                          <Modal.Body>
+                            <LabelField
+                              type={"search"}
+                              placeholder={"Search here"}
+                              label={"Search"}
+                              fieldSize={" w-100 h-45"}
+                            />
+                          </Modal.Body>
+                        </Modal>
                         <Button className={"logo-btn-p"}>
                           <FontAwesomeIcon icon={faBars} />
                         </Button>
@@ -77,43 +118,26 @@ export default function ProductDetails() {
                         </Button>
                       </Box>
                     </Col>
-                    <h3>Salads</h3>
 
                     <Col md={12}>
                       <Row>
                         <Col md={3}>
-                          <div>
-                            <ImageCards
-                              Imgsrc={"images/product/single/salad.jpg"}
-                              productTitle=" lasgana"
-                            />
-                          </div>
-                        </Col>
-                        <Col md={3}>
-                          <div onClick={handleShowAdd}>
-                            <ImageCards
-                              Imgsrc={"images/product/single/salad.jpg"}
-                              productTitle=" lasgana"
-                            />
-                          </div>
-                        </Col>{" "}
-                        <Col md={3}>
-                          <ImageCards
-                            Imgsrc={"images/product/single/salad.jpg"}
-                            productTitle=" lasgana"
-                          />
-                        </Col>{" "}
-                        <Col md={3}>
-                          <ImageCards
-                            Imgsrc={"images/product/single/salad.jpg"}
-                            productTitle=" lasgana"
-                          />
-                        </Col>{" "}
-                        <Col md={3}>
-                          <ImageCards
-                            Imgsrc={"images/product/single/salad.jpg"}
-                            productTitle="lasgana"
-                          />
+                          {data.product.tbody
+                            .filter((item) => {
+                              return item.id == id;
+                            })
+                            .map((item, i) => (
+                              <div
+                                className="clickable"
+                                key={i}
+                                onClick={() => setSelectedItem(item.heading)}
+                              >
+                                <ImageCards
+                                  Imgsrc={item.src}
+                                  productTitle={item.heading}
+                                />
+                              </div>
+                            ))}
                         </Col>
                       </Row>
                     </Col>

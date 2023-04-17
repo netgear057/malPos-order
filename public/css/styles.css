@@ -148,26 +148,25 @@ h5 {
   font-weight: bolder !important;
   color: var(--headingColor) !important;
 }
-.h-45{
+.h-45 {
   height: 45px;
 }
-.field-w-100{
+.field-w-100 {
   width: 100px;
 }
-.field-w-150{
+.field-w-150 {
   width: 150px;
 }
-.field-w-200{
+.field-w-200 {
   width: 200px;
 }
-.ptb-10
-{
+.ptb-10 {
   padding: 10px 0px;
 }
 .pl-7 {
   padding: 10px 7px !important;
 }
-.border-top{
+.border-top {
   border-top: 1px solid #071739 !important;
 }
 .f-13 {
@@ -185,7 +184,7 @@ h5 {
 p {
   margin: 0px;
 }
-.cusTabsbuttons{
+.cusTabsbuttons {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -346,13 +345,13 @@ p {
 .red {
   color: red;
 }
-.text-center{
+.text-center {
   text-align: center;
 }
-.text-end{
+.text-end {
   text-align: end;
 }
-.verticle-align-m{
+.verticle-align-m {
   vertical-align: middle;
 }
 .header-add-btn {
@@ -404,11 +403,10 @@ p {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-.logo-btn-p{
+.logo-btn-p {
   padding: 10px 12px !important;
   background-color: #ee3432;
   margin-right: 5px;
-
 }
 .cus-btn {
   font-size: 12px;
@@ -423,7 +421,7 @@ p {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-.floor-bg{
+.floor-bg {
   cursor: pointer;
 }
 .floor-bg.active {
@@ -450,7 +448,7 @@ p {
 .alert-dismissible .btn-close {
   padding: 12px;
 }
-.secound-color{
+.secound-color {
   color: #f29b30;
 }
 .mc-alert {
@@ -601,7 +599,6 @@ p {
 .mc-logo img {
   width: 105px;
   height: 76px;
-
 }
 
 .mc-logo-group {
@@ -6960,43 +6957,44 @@ textarea.form-control {
   color: #fff;
   background-color: #172026;
 }
-.product-img-card{
+.product-img-card {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-.product-img-card .imgCard{
+.product-img-card .imgCard {
   width: 175px;
   height: 80px;
   margin-right: 10px;
   margin-bottom: 10px;
 }
-.image-card-box{
+.image-card-box {
   height: 100%;
   width: 100%;
   border-radius: 4px;
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
-
 }
-.image-card-box img{
+.image-card-box img {
   height: 100%;
   width: 100%;
-  
+
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
-.image-card-box .image-card-overlay-text{
+.image-card-box .image-card-overlay-text {
   position: absolute;
-  color: #fff;
+  color: #ffffff;
+  font-size: large;
+  font-weight: 700;
   text-align: center;
   left: 20%;
   top: 30%;
 }
 
 /* nw order model */
- 
+
 .new-order-model .modal-content {
   width: 300px;
 }
@@ -7007,22 +7005,25 @@ textarea.form-control {
 .new-order-model .modal-header .modal-title {
   font-size: 18px;
 }
-.pv-receipt-box{
+.pv-receipt-box {
   min-height: 300px;
 }
 /* open receipt  */
-.open-receipt-box{
+.open-receipt-box {
   display: flex;
 }
-.open-receipt-span{
+.open-receipt-span {
   padding: 1px 8px;
   border-radius: 2px;
   background-color: #ee3432;
   color: #fff;
 }
-.search-model .modal-content{
+.search-model .modal-content {
   width: 600px;
 }
-.search-model .modal-body{
+.search-model .modal-body {
   padding: 30px 20px;
+}
+.clickable {
+  cursor: pointer;
 }
