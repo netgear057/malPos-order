@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Modal, Pagination } from "react-bootstrap";
+import { Button, Modal } from "react-bootstrap";
 import { Row, Col } from "react-bootstrap";
 import { CardLayout } from "../../components/cards";
 import ProductCard from "../../components/cards/ProductCard";
@@ -27,7 +27,8 @@ import Sidebar from "../../layouts/Sidebar";
 import ImageCards from "../../components/cards/ImageCards";
 import ProductViewReceipt from "./ProductViewReceipt";
 import { MultipleMenu } from "../../components/sidebar";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Pagination } from "../../components";
 
 export default function ProductsView() {
   const [show, setShow] = useState(false);
@@ -36,7 +37,8 @@ export default function ProductsView() {
   const [items, setItems] = useState(data.product.tbody);
   const location = useLocation();
   const { service } = location.state;
-  console.log(service);
+  const navigate = useNavigate();
+
   return (
     <div>
       <PageLayout>
@@ -59,11 +61,14 @@ export default function ProductsView() {
                 <CardLayout>
                   <Row>
                     <Col md={7}>
-                      <Link to="/orders-line">
-                        <Button className={"logo-btn-p"}>
-                          <FontAwesomeIcon icon={faHome} />
-                        </Button>
-                      </Link>
+                      {/* <Link to="/orders-line"> */}
+                      <Button
+                        className={"logo-btn-p"}
+                        onClick={() => navigate(0)}
+                      >
+                        <FontAwesomeIcon icon={faHome} />
+                      </Button>
+                      {/* </Link> */}
                     </Col>
                     <Col md={5}>
                       <Box className={"search-btn-box"}>
@@ -136,7 +141,7 @@ export default function ProductsView() {
                     </Col>
                   </Row>
                 </CardLayout>
-                {/* <Pagination /> */}
+                <Pagination />
               </Col>
             </Row>
           </Col>
