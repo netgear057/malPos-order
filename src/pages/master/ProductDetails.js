@@ -22,14 +22,17 @@ import {
 import ImageCards from "../../components/cards/ImageCards";
 import ProductViewReceipt from "./ProductViewReceipt";
 import { Link, useLocation } from "react-router-dom";
+import AddGuestProductModal from "../../components/popupsModel/AddGuestProductModal";
 
 export default function ProductDetails() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const [showAdd, setShowAdd] = useState(false);
+  const [addGuest, setAddGuest] = useState(false);
+  const handlAddGuestClose = () => setAddGuest(false);
+  const handlAddGuestShow = () => setAddGuest(true);
   const [selectedItem, setSelectedItem] = useState("");
-  const handleShowAdd = () => setShowAdd(true);
+  // const handleShowAdd = () => setShowAdd(true);
   const location = useLocation();
   // const service = location.state;
   const { id, service } = location.state;
@@ -58,7 +61,7 @@ export default function ProductDetails() {
                   <ProductViewReceipt id={service.service} />
                 </Row>
               </Col>
-              <Col md={7}>
+              <Col md={8}>
                 <CardLayout>
                   <Row>
                     <Col md={7}>
@@ -120,8 +123,9 @@ export default function ProductDetails() {
                     </Col>
 
                     <Col md={12}>
-                      <Row>
-                        <Col md={3}>
+                    <Box className={"product-img-card"}>
+
+
                           {data.product.tbody
                             .filter((item) => {
                               return item.id == id;
@@ -132,14 +136,17 @@ export default function ProductDetails() {
                                 key={i}
                                 onClick={() => setSelectedItem(item.heading)}
                               >
+                                <Box onClick={handlAddGuestShow} className={'imgCard'}>
                                 <ImageCards
                                   Imgsrc={item.src}
                                   productTitle={item.heading}
                                 />
+                              <AddGuestProductModal show={addGuest} handlAddGuestClose={handlAddGuestClose} handlAddGuestShow={handlAddGuestShow}/>
+
+                                </Box>
                               </div>
                             ))}
-                        </Col>
-                      </Row>
+                       </Box>
                     </Col>
                   </Row>
                 </CardLayout>

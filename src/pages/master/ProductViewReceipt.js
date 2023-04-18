@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { Col, Row, Button } from "react-bootstrap";
 import { CardLayout } from "../../components/cards";
 import { Box } from "../../components/elements";
@@ -7,9 +7,15 @@ import {
   faEdit,
   faClock,
   faAngleDown,
+  faPlus,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
-
+import {Text} from "../../components/elements";
+import CheckoutModel from "../../components/popupsModel/CheckoutModel";
 export default function ProductViewReceipt({ id }) {
+  // const [showPayment, setShowPayment] = useState(false);
+  //   const handleClosePayment = () => setShowPayment(false);
+  //   const handleShowPayment = () => setShowPayment(true);
   return (
     <div>
       <CardLayout>
@@ -25,7 +31,19 @@ export default function ProductViewReceipt({ id }) {
             #2324 <FontAwesomeIcon icon={faAngleDown} />
           </Col>
           <Col md={12}>
-            <Box className={"pv-receipt-box"}></Box>
+            <Box className={"pv-receipt-box"}>
+              <CardLayout>
+                <Row>
+                  <Col md={8} >
+                  <Text className="bold" as='span'>Al - bebsi with Lasgana </Text><br/>
+                  <Text as='span'>Total :  34.01 $  </Text>
+                  </Col>
+                  <Col md={4} className="text-end cusur-p">
+                    <FontAwesomeIcon icon={faPlus}/>
+                  </Col>
+                </Row>
+              </CardLayout>
+            </Box>
           </Col>
           <Col md={6}>
             Discount
@@ -38,7 +56,8 @@ export default function ProductViewReceipt({ id }) {
             00.33
           </Col>
           <Col md={12}>
-            <Button className="w-100"> Check out</Button>
+            <Button  className="w-100"> Delete receipt <FontAwesomeIcon icon={faXmark} className='f-13'/> </Button>
+            {/* <CheckoutModel show={showPayment} handleClosePayment={handleClosePayment} handleShowPayment={handleClosePayment}/> */}
           </Col>
         </Row>
       </CardLayout>
