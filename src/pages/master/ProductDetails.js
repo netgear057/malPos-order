@@ -142,7 +142,6 @@ export default function ProductDetails() {
                                   productTitle={item.heading}
                                 />
                               <AddGuestProductModal show={addGuest} handlAddGuestClose={handlAddGuestClose} handlAddGuestShow={handlAddGuestShow}/>
-
                                 </Box>
                               </div>
                             ))}
