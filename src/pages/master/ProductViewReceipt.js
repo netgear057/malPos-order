@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { Col, Row, Button } from "react-bootstrap";
 import { CardLayout } from "../../components/cards";
 import { Box } from "../../components/elements";
@@ -10,7 +10,7 @@ import {
   faPlus,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
-import {Text} from "../../components/elements";
+import { Text } from "../../components/elements";
 import CheckoutModel from "../../components/popupsModel/CheckoutModel";
 export default function ProductViewReceipt({ id }) {
   // const [showPayment, setShowPayment] = useState(false);
@@ -34,12 +34,15 @@ export default function ProductViewReceipt({ id }) {
             <Box className={"pv-receipt-box"}>
               <CardLayout>
                 <Row>
-                  <Col md={8} >
-                  <Text className="bold" as='span'>Al - bebsi with Lasgana </Text><br/>
-                  <Text as='span'>Total :  34.01 $  </Text>
+                  <Col md={8}>
+                    <Text className="bold" as="span">
+                      Al - bebsi with Lasgana{" "}
+                    </Text>
+                    <br />
+                    <Text as="span">Total : 34.01 $ </Text>
                   </Col>
                   <Col md={4} className="text-end cusur-p">
-                    <FontAwesomeIcon icon={faPlus}/>
+                    <FontAwesomeIcon icon={faPlus} />
                   </Col>
                 </Row>
               </CardLayout>
@@ -56,7 +59,7 @@ export default function ProductViewReceipt({ id }) {
             00.33
           </Col>
           <Col md={12}>
-            <Button  className="w-100"> Delete receipt <FontAwesomeIcon icon={faXmark} className='f-13'/> </Button>
+            <Button className="w-100"> Delete receipt </Button>
             {/* <CheckoutModel show={showPayment} handleClosePayment={handleClosePayment} handleShowPayment={handleClosePayment}/> */}
           </Col>
         </Row>

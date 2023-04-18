@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Input, Label, Select, Option } from "../elements";
 
-export default function LabelField({
+export default function LabelFieldT({
   label,
   labelDir,
   fieldSize,
@@ -18,7 +18,7 @@ export default function LabelField({
       {type ? (
         <Input
           type={type || "text"}
-          placeholder={placeholder || "Type here..."}
+          placeholder={placeholder || "1"}
           className={`mc-label-field-input ${fieldSize || "w-md h-sm"}`}
           {...rest}
         />
