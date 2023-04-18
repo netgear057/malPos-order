@@ -19,8 +19,8 @@ export default function OrdersLine() {
   };
 
   const buttonList = [
-    { text: "Al bebsi Table 1", index: 0, id: "" },
-    { text: "Rizak Table 2", index: 1, id: "1" },
+    { text: "First Floor", index: 0, id: "" },
+    { text: "Second Floor", index: 1, id: "1" },
   ];
   return (
     <div>
