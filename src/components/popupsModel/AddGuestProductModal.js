@@ -22,8 +22,7 @@ export default function AddGuestProductModal(props) {
                             <Col md={12} className='mb-20'>
                                 <Text as={'span'} className={'bold f-13 '}>Flat-White Type-920-BCat</Text>
                             </Col>
-                            <hr />
-                            <Col md={12} className='mb-10'>
+                            <Col md={12} >
                                 <Box className={"product-img-card"}>
                                     {data.product.tbody.slice(0, 3).map((item, i) => (
                                         <Box key={i} className={'imgCard'}>

@@ -25,7 +25,7 @@ import ProductViewReceipt from "./ProductViewReceipt";
 import { Link, useLocation } from "react-router-dom";
 import AddGuestProductModal from "../../components/popupsModel/AddGuestProductModal";
 
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Pagination } from "../../components";
 
 export default function ProductDetails() {
@@ -149,15 +149,15 @@ export default function ProductDetails() {
                                   productTitle={item.heading}
                                 />
                               <AddGuestProductModal show={addGuest} handlAddGuestClose={handlAddGuestClose} handlAddGuestShow={handlAddGuestShow}/>
-
                                 </Box>
                               </div>
                             ))}
                        </Box>
                     </Col>
+                    <Pagination />
+
                   </Row>
                 </CardLayout>
-                <Pagination />
               </Col>
             </Row>
           </Col>
