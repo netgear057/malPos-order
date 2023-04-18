@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { Col, Row, Modal, Button } from 'react-bootstrap'
 import { Text } from '../elements'
 import data from "../../data/master/productList.json";
@@ -8,11 +8,20 @@ import { faCheck, faMinus, faPlus, faDeleteLeft } from '@fortawesome/free-solid-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { LabelField } from '../fields';
 export default function AddGuestProductModal(props) {
-    const handleClose = () => props.handleCloseModel();
-    const handleShow = () => props.handleShowModel();
+    // const handleClose = () => props.handleCloseModel();
+    // const handleShow = () => props.handleShowModel();
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => {
+      setShow(false);
+    };
+  
+    const handleShow = () => {
+      setShow(true);
+    };
     return (
         <div>
-            <Modal className='add-guestProduct-model' show={props.show} onHide={handleClose}>
+            <Modal className='add-guestProduct-model' show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Flat White </Modal.Title>
                 </Modal.Header>
@@ -22,7 +31,8 @@ export default function AddGuestProductModal(props) {
                             <Col md={12} className='mb-20'>
                                 <Text as={'span'} className={'bold f-13 '}>Flat-White Type-920-BCat</Text>
                             </Col>
-                            <Col md={12} >
+                            <hr />
+                            <Col md={12} className='mb-10'>
                                 <Box className={"product-img-card"}>
                                     {data.product.tbody.slice(0, 3).map((item, i) => (
                                         <Box key={i} className={'imgCard'}>

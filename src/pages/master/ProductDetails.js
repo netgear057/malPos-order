@@ -8,6 +8,8 @@ import { LabelField } from "../../components/fields";
 import PageLayout from "../../layouts/PageLayout";
 import { Text } from "../../components/elements";
 import { Fontawesome, FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck, faMinus, faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
+
 import data from "../../data/master/productList.json";
 
 import {
@@ -29,12 +31,24 @@ import { useNavigate } from "react-router-dom";
 import { Pagination } from "../../components";
 
 export default function ProductDetails() {
+ 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const [addGuest, setAddGuest] = useState(false);
-  const handlAddGuestClose = () => setAddGuest(false);
-  const handlAddGuestShow = () => setAddGuest(true);
+  const [showModal, setShowModal] = useState(false);
+
+  const handleShowModal = () => {
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+  const handleSaveModal = () => {
+    // do something
+    setShowModal(false);
+  };
   const [selectedItem, setSelectedItem] = useState("");
   // const handleShowAdd = () => setShowAdd(true);
   const location = useLocation();
@@ -130,29 +144,86 @@ export default function ProductDetails() {
                     </Col>
 
                     <Col md={12}>
-                    <Box className={"product-img-card"}>
+                      <Box className={"product-img-card"}>
 
 
-                          {data.product.tbody
-                            .filter((item) => {
-                              return item.id == id;
-                            })
-                            .map((item, i) => (
-                              <div
-                                className="clickable"
-                                key={i}
-                                onClick={() => setSelectedItem(item.heading)}
-                              >
-                                <Box onClick={handlAddGuestShow} className={'imgCard'}>
+                        {data.product.tbody
+                          .filter((item) => {
+                            return item.id == id;
+                          })
+                          .map((item, i) => (
+                            <div
+                              className="clickable"
+                              key={i}
+                              onClick={() => setSelectedItem(item.heading)}
+                            >
+                              <Box onClick={handleShowModal} className={'imgCard'}>
                                 <ImageCards
                                   Imgsrc={item.src}
                                   productTitle={item.heading}
                                 />
-                              <AddGuestProductModal show={addGuest} handlAddGuestClose={handlAddGuestClose} handlAddGuestShow={handlAddGuestShow}/>
-                                </Box>
-                              </div>
-                            ))}
-                       </Box>
+                              
+                              </Box>
+                              <Modal className='add-guestProduct-model' show={showModal} onHide={handleCloseModal}>
+                                  <Modal.Header closeButton>
+                                    <Modal.Title>Flat White </Modal.Title>
+                                  </Modal.Header>
+                                  <Modal.Body>
+                                    <Row>
+                                      <Col md={9}>
+                                        <Col md={12} className='mb-20'>
+                                          <Text as={'span'} className={'bold f-13 '}>Flat-White Type-920-BCat</Text>
+                                        </Col>
+                                        <Col md={12} className='mb-10'>
+                                          <Box className={"product-img-card"}>
+                                          <Box className="productCard-btn">Rice Type 2</Box>
+                                          <Box className="productCard-btn">Lasgana Sallads 2</Box>
+                                            {/* {data.product.tbody.slice(0, 3).map((item, i) => (
+                                              <Box key={i} className={'imgCard'}>
+                                                <ImageCards
+                                                  Imgsrc={item.src}
+                                                  productTitle={item.heading}
+                                                />
+                                              </Box>
+                                            ))} */}
+                                          </Box>
+                                        </Col>
+                                      </Col>
+                                      <Col md={3}>
+                                        <Box className={'Add-sub-quan d-flex'}>
+                                          <Button className='Add-sub-quan-minus'><FontAwesomeIcon icon={faMinus} /> </Button>
+                                          <LabelField fieldSize={'w100'} type={'text'} placeholder={'0'} />
+                                          <Button className='Add-sub-quan-minus'><FontAwesomeIcon icon={faPlus} /> </Button>
+                                        </Box>
+                                        <Box className={'cal-btns-wrapper d-flex-wrap'}>
+                                          <button className={'cal-btns'}>1</button>
+                                          <button className={'cal-btns'}>2</button>
+                                          <button className={'cal-btns'}>3</button>
+                                          <button className={'cal-btns'}>4</button>
+                                          <button className={'cal-btns'}>5</button>
+                                          <button className={'cal-btns'}>6</button>
+                                          <button className={'cal-btns'}>7</button>
+                                          <button className={'cal-btns'}>8</button>
+                                          <button className={'cal-btns'}>9</button>
+                                          <button className={'cal-btns'}>.</button>
+                                          <button className={'cal-btns'}>0</button>
+                                          <button className={'cal-btns'}>
+                                            <FontAwesomeIcon icon={faDeleteLeft} />
+                                          </button>
+                                        </Box>
+                                        <Col md={12}>
+                                          <Button className="w-100 mt-10"> <FontAwesomeIcon icon={faCheck} className='f-13' />  Save  </Button>
+                                        </Col>
+                                      </Col>
+                                    </Row>
+                                  </Modal.Body>
+                                  <Modal.Footer>
+                                    <Text as={'span'} className={'bold f-13'}>Subtotal : 32.40 $</Text>
+                                  </Modal.Footer>
+                                </Modal>
+                            </div>
+                          ))}
+                      </Box>
                     </Col>
                     <Pagination />
 

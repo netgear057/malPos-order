@@ -7088,4 +7088,17 @@ textarea.form-control {
 .Add-sub-quan{
   width: 100%;
 }
-
+.productCard-btn{
+  width: 140px;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  border-radius: 4px;
+  text-overflow: ellipsis;
+  background-color: #5E5D72;
+  color: #fff;
+  margin-right: 5px;
+  cursor: pointer;
+}
