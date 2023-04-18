@@ -12,12 +12,12 @@ export default function LayoutWithoutSidebar({ children }) {
 
   return (
     <DrawerProvider>
-      <BackSidebar/>
+      <BackSidebar />
       <Header />
       <Main>
         <>
           {children}
-          {location.pathname !== "/message" ? <Footer /> : ""}
+          {/* {location.pathname !== "/message" ? <Footer /> : ""} */}
         </>
       </Main>
     </DrawerProvider>

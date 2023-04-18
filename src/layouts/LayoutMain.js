@@ -17,7 +17,7 @@ export default function LayoutMain({ children }) {
       <Main>
         <>
           {children}
-          {location.pathname !== "/message" ? <Footer /> : ""}
+          {/* {location.pathname !== "/message" ? <Footer /> : ""} */}
         </>
       </Main>
     </DrawerProvider>

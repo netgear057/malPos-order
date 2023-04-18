@@ -21,7 +21,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import ImageCards from "../../components/cards/ImageCards";
 import ProductViewReceipt from "./ProductViewReceipt";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Pagination } from "../../components";
 
 export default function ProductDetails() {
   const [show, setShow] = useState(false);
@@ -33,8 +34,8 @@ export default function ProductDetails() {
   const location = useLocation();
   // const service = location.state;
   const { id, service } = location.state;
-  console.log(service);
-  console.log(id);
+  const navigate = useNavigate();
+
   const myList = [
     { name: "Lasgana 220 Kg", qty: 2, subtotal: 10 },
     { name: "Large Pizza", qty: 1, subtotal: 5 },
@@ -65,7 +66,10 @@ export default function ProductDetails() {
                       <Row>
                         <Col md={2}>
                           <Link to="/orders-line">
-                            <Button className={"logo-btn-p"}>
+                            <Button
+                              className={"logo-btn-p"}
+                              onClick={() => navigate(-1)}
+                            >
                               <FontAwesomeIcon icon={faHome} />
                             </Button>
                           </Link>
@@ -143,6 +147,7 @@ export default function ProductDetails() {
                     </Col>
                   </Row>
                 </CardLayout>
+                <Pagination />
               </Col>
             </Row>
           </Col>
