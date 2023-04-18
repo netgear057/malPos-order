@@ -154,9 +154,10 @@ export default function ProductDetails() {
                             ))}
                        </Box>
                     </Col>
+                    <Pagination />
+
                   </Row>
                 </CardLayout>
-                <Pagination />
               </Col>
             </Row>
           </Col>
