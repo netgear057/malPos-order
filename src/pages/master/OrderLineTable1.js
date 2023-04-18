@@ -9,12 +9,15 @@ import { faCheck, faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LabelFieldT from "../../components/fields/LabelFieldT";
 export default function OrderLineTable1() {
+  const [value, setValue] = useState(0);
   const [showModel, setShow] = useState(false);
+
 
   const handleClose = () => {
     setShow(false);
     setInputValue("");
   };
+
   const handleShow = () => setShow(true);
   const [inputValue, setInputValue] = useState("");
   const handleClick = (value) => {
@@ -41,6 +44,7 @@ export default function OrderLineTable1() {
                       <br />
                       <Text as="span">4</Text>
                     </Link>
+
                     <Modal
                       className="guestSelect-model f-13"
                       show={showModel}
@@ -151,6 +155,7 @@ export default function OrderLineTable1() {
                           <FontAwesomeIcon icon={faCheck} /> Save
                         </Button>
                       </Modal.Footer>
+
                     </Modal>
                     <Link
                       to={""}
