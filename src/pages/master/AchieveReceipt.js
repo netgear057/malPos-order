@@ -1,32 +1,41 @@
-import React from 'react'
-import { Row, Col } from 'react-bootstrap'
-import { LabelField } from '../../components/fields'
-import { Box } from '../../components/elements'
+import React from "react";
+import { Row, Col, FormControl } from "react-bootstrap";
+import { LabelField } from "../../components/fields";
+import { Box } from "../../components/elements";
 export default function AchieveReceipt() {
-    return (
-        <div>
-            <Row>
-                <Col md={12}>
-                    <Box className={'open-receipt-box'}>
-                        <LabelField
-                            type={'date'}
-                            fieldSize=" mr-10 field-w-150 h-md "
-                        />
-                        <LabelField
-                            option={["ID", "Cash", "Card", "Bank"]}
-                            fieldSize=" mr-10  field-w-200 h-md"
-                        />
-                        <LabelField
-                            option={["Hall", "Cash", "Card", "Bank"]}
-                            fieldSize=" mr-10 field-w-100 h-md "
-                        />
-                        <LabelField
-                            option={["Table", "Cash", "Card", "Bank"]}
-                            fieldSize=" mr-10 field-w-100 h-md "
-                        />
-                    </Box>
-                </Col>
-            </Row>
-        </div>
-    )
+  return (
+    <div>
+      <Row>
+        <Col md={12}>
+          <Box className={"open-receipt-box"}>
+            <LabelField type={"date"} fieldSize=" mr-10 field-w-150 h-md " />
+            <Col
+              md={2}
+              style={{
+                marginRight: "10px",
+              }}
+            >
+              <FormControl placeholder="ID" type="text" />
+            </Col>
+            <LabelField
+              option={["Hall", "First Floor ", "Second Floor", "Hall 11"]}
+              fieldSize=" mr-10 field-w-150 h-md "
+            />
+            <LabelField
+              option={[
+                "Table",
+                "Table 1",
+                "Table 2",
+                "Table 3",
+                "Table 4",
+                "VIP",
+                "Table 5",
+              ]}
+              fieldSize=" mr-10 field-w-150 h-md "
+            />
+          </Box>
+        </Col>
+      </Row>
+    </div>
+  );
 }
