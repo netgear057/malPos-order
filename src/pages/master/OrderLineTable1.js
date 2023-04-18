@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row ,Button,Modal} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { CardLayout } from "../../components/cards";
 import { Box, Text } from "../../components/elements";
 import GuestSelectModel from "../../components/popupsModel/GuestSelectModel";
+import { LabelField } from "../../components/fields";
+import { faCheck, faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export default function OrderLineTable1() {
   const [showModel, setShow] = useState(false);
 
@@ -18,12 +21,45 @@ export default function OrderLineTable1() {
               <Row>
                 <Col md={3}>
                   <Box className={"child-one-box-container"}>
-                    <Box onClick={handleShow} className={"child-one-box"}>
+                    <Link to={""} onClick={handleShow} className={"child-one-box"}>
                       <h6>Table 1</h6>
                       <br />
                       <Text as="span">4</Text>
-                      <GuestSelectModel show={showModel}  handleCloseModel={handleClose} handleShowModel={handleShow}/>
-                    </Box>
+
+                    </Link>
+                    <Modal className='guestSelect-model f-13' show={showModel} onHide={handleClose}>
+                        <Modal.Header closeButton>
+                            <Modal.Title className='f-13'>Guest Select</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <Col md={12}>
+                                <LabelField type={'number'} placeholder="0" />
+                            </Col>
+                            <Col md={12}>
+                                <Box className={'cal-btns-wrapper d-flex-wrap'}>
+                                <button className={'cal-btns'}>1</button>
+                                <button className={'cal-btns'}>2</button>
+                                <button className={'cal-btns'}>3</button>
+                                <button  className={'cal-btns'}>4</button>
+                                <button className={'cal-btns'}>5</button>
+                                <button className={'cal-btns'}>6</button>
+                                <button className={'cal-btns'}>7</button>
+                                <button className={'cal-btns'}>8</button>
+                                <button className={'cal-btns'}>9</button>
+                                <button className={'cal-btns'}>.</button>
+                                <button className={'cal-btns'}>0</button>
+                                <button className={'cal-btns'}>
+                                    <FontAwesomeIcon icon={faDeleteLeft}/>
+                                </button>
+                                </Box>
+                            </Col>
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button className='cus-btn' onClick={handleClose}>
+                                <FontAwesomeIcon icon={faCheck} />  Save
+                            </Button>
+                        </Modal.Footer>
+                    </Modal>
                     <Link to={""} className={"child-one-box"}>
                       <Box>
                         <h6>Table 1</h6>
