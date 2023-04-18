@@ -8,7 +8,13 @@ export default function AchieveReceipt() {
       <Row>
         <Col md={12}>
           <Box className={"open-receipt-box"}>
-            <LabelField type={"date"} fieldSize=" mr-10 field-w-150 h-md " />
+            {/* <LabelField type={"date"} fieldSize=" mr-10 field-w-150 h-md " /> */}
+            <LabelField
+              type={"date"}
+              fieldSize="mr-10 field-w-150 h-md"
+              defaultValue={new Date().toISOString().slice(0, 10)}
+            />
+
             <Col
               md={2}
               style={{
