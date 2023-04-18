@@ -1541,20 +1541,20 @@ textarea.form-control {
 }
 
 .modal-header {
-    padding: 0px;
+    padding: 10px;
     border: none;
-    margin-bottom: 30px
+    margin-bottom: 0px;
 }
 
 .modal-title {
-    font-size: 20px;
+    font-size: 13px;
     font-weight: 600;
     text-transform: capitalize;
     color: var(--headingColor)
 }
 
 .modal-footer {
-    padding: 0px;
+    padding: 10px;
     border: none;
     margin-top: 35px;
     -webkit-box-pack: center;

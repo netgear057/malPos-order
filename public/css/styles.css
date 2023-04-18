@@ -148,6 +148,9 @@ h5 {
   font-weight: bolder !important;
   color: var(--headingColor) !important;
 }
+.cusur-p{
+  cursor: pointer;
+}
 .h-45 {
   height: 45px;
 }
@@ -159,6 +162,9 @@ h5 {
 }
 .field-w-200 {
   width: 200px;
+}
+.mb-20{
+  margin-bottom: 20px;
 }
 .ptb-10 {
   padding: 10px 0px;
@@ -189,7 +195,14 @@ p {
   flex-direction: row;
   flex-wrap: wrap;
 }
-
+.d-flex{
+  display: flex;
+}
+.d-flex-wrap{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 html,
 body {
   direction: ltr;
@@ -253,6 +266,9 @@ textarea::placeholder {
 }
 .mt-20 {
   margin-top: 20px;
+}
+.mt-10 {
+  margin-top: 10px;
 }
 button {
   cursor: pointer;
@@ -1558,7 +1574,7 @@ textarea.form-control {
 .modal-header {
   padding: 0px;
   border: none;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
 }
 
 .modal-title {
@@ -7027,3 +7043,48 @@ textarea.form-control {
 .clickable {
   cursor: pointer;
 }
+
+/* guest sekect model */
+.guestSelect-model .modal-content{
+  width: 270px;
+}
+.guestSelect-model .modal-header{
+  padding: 10px;
+  margin-bottom: 0px;
+}
+
+.guestSelect-model .modal-footer{
+  justify-content: end;
+  margin-top: 0px;
+}
+.cal-btns-wrapper{
+  width: 100%;
+  justify-content: space-between;
+
+}
+.cal-btns-wrapper .cal-btns{
+  flex-basis: calc(33.33% - 5px); /* adjust the width based on the number of children and margin/padding */
+  height:50px; /* set the height as desired */
+  margin: 5px 0px 0px 0px; /* set the margin as desired */
+  background-color: var(--hardBorder);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  cursor: pointer;
+
+}
+.cal-btns-wrapper .cal-btns:hover{
+  background-color: var(--deepGray);
+}
+/* add guest prodcut model */
+.add-guestProduct-model .modal-content{
+  width: 1000px;
+}
+.add-guestProduct-model .modal-footer{
+  justify-content: left;
+}
+.Add-sub-quan{
+  width: 100%;
+}
+
