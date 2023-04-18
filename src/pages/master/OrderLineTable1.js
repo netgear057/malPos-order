@@ -8,8 +8,19 @@ import { LabelField } from "../../components/fields";
 import { faCheck, faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export default function OrderLineTable1() {
+  const [value, setValue] = useState(0);
   const [showModel, setShow] = useState(false);
-
+  const handleButtonClick = (input) => {
+    if (input === "delete") {
+      const newValue = Math.floor(value / 10); 
+      setValue(newValue);
+    } else if (value < 100) {
+      setValue(value * 10 + input);
+    }
+  };
+  const handleTextChange = (event) => {
+    setValue(event.target.value);
+  };
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
@@ -33,22 +44,22 @@ export default function OrderLineTable1() {
                         </Modal.Header>
                         <Modal.Body>
                             <Col md={12}>
-                                <LabelField type={'number'} placeholder="0" />
+                                <LabelField type={'number'} value={value} placeholder="0" />
                             </Col>
                             <Col md={12}>
                                 <Box className={'cal-btns-wrapper d-flex-wrap'}>
-                                <button className={'cal-btns'}>1</button>
-                                <button className={'cal-btns'}>2</button>
-                                <button className={'cal-btns'}>3</button>
-                                <button  className={'cal-btns'}>4</button>
-                                <button className={'cal-btns'}>5</button>
-                                <button className={'cal-btns'}>6</button>
-                                <button className={'cal-btns'}>7</button>
-                                <button className={'cal-btns'}>8</button>
-                                <button className={'cal-btns'}>9</button>
-                                <button className={'cal-btns'}>.</button>
-                                <button className={'cal-btns'}>0</button>
-                                <button className={'cal-btns'}>
+                                <button onClick={() => handleButtonClick(1)} className={'cal-btns'}>1</button>
+                                <button   className={'cal-btns'} onClick={() => handleButtonClick(2)}>2</button>
+                                <button className={'cal-btns'} onClick={() => handleButtonClick(3)}>3</button>
+                                <button  className={'cal-btns'} onClick={() => handleButtonClick(4)}>4</button>
+                                <button className={'cal-btns'} onClick={() => handleButtonClick(5)}>5</button>
+                                <button className={'cal-btns'} onClick={() => handleButtonClick(6)}>6</button>
+                                <button className={'cal-btns'} onClick={() => handleButtonClick(7)}>7</button>
+                                <button className={'cal-btns'} onClick={() => handleButtonClick(8)}>8</button>
+                                <button className={'cal-btns'} onClick={() => handleButtonClick(9)}>9</button>
+                                <button className={'cal-btns'} onClick={() => handleButtonClick(0)}>.</button>
+                                <button className={'cal-btns'} onClick={() => handleButtonClick(0)}>0</button>
+                                <button className={'cal-btns'} onClick={() => handleButtonClick("delete")}>
                                     <FontAwesomeIcon icon={faDeleteLeft}/>
                                 </button>
                                 </Box>
